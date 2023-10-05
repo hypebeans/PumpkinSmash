@@ -15,8 +15,9 @@ struct LevelSelectView: View {
     var body: some View {
         VStack {
             Text("レベルを選択")
+                .font(.title)
+                .fontWeight(.bold)
                 .padding()
-            
         
             Button(action: {
                 isNext = true
