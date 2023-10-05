@@ -14,7 +14,7 @@ struct LevelSelectView: View {
     
     var body: some View {
         VStack {
-            Text("Select Level")
+            Text("レベルを選択")
                 .padding()
             
         
