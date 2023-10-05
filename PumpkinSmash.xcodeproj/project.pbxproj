@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DFA46AA2ACEB0A700781FF4 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */; };
 		6B069CEA2ACD60490027B308 /* PumpkinSmashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */; };
 		6B069CEC2ACD60490027B308 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CEB2ACD60490027B308 /* ContentView.swift */; };
 		6B069CEE2ACD604C0027B308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B069CED2ACD604C0027B308 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
 		6B069CE62ACD60490027B308 /* PumpkinSmash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PumpkinSmash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PumpkinSmashApp.swift; sourceTree = "<group>"; };
 		6B069CEB2ACD60490027B308 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */,
 				6B069CEB2ACD60490027B308 /* ContentView.swift */,
 				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
+				1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */,
 				6B069CED2ACD604C0027B308 /* Assets.xcassets */,
 				6B069CEF2ACD604C0027B308 /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 				6B069CF82ACD647E0027B308 /* LevelSelectView.swift in Sources */,
 				6B069CEC2ACD60490027B308 /* ContentView.swift in Sources */,
 				6B069CEA2ACD60490027B308 /* PumpkinSmashApp.swift in Sources */,
+				1DFA46AA2ACEB0A700781FF4 /* GameFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
