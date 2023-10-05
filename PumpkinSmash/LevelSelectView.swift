@@ -19,9 +19,7 @@ struct LevelSelectView: View {
             
         
             Button(action: {
-                .alert(isPresented: $isNext) {
-                    Alert(title: Text("CONTINUE"), message: Text("Lanjut?"), primaryButton: Button("YES"), secondaryButton: Button("NO", role: .destructive))
-                }
+                isNext = true
             }) {
                 RoundedRectangle(cornerRadius: 20)
                     .fill(.black.gradient)
@@ -32,7 +30,13 @@ struct LevelSelectView: View {
                             .fontWeight(.black)
                             .foregroundColor(.white)
                     )
-            }.padding()
+            }
+//            .alert(isPresented: $isNext) {
+//                Alert(title: Text("CONTINUE"), message: Text("Lanjut?"), primaryButton: Button("YES"), secondaryButton: Button("NO", role: .destructive))
+//            }
+            .padding()
+            
+            
             Button(action: {}) {
                 RoundedRectangle(cornerRadius: 20)
                     .fill(.black.gradient)
