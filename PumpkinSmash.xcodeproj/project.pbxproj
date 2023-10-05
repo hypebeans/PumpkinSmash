@@ -11,6 +11,7 @@
 		6B069CEC2ACD60490027B308 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CEB2ACD60490027B308 /* ContentView.swift */; };
 		6B069CEE2ACD604C0027B308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B069CED2ACD604C0027B308 /* Assets.xcassets */; };
 		6B069CF12ACD604C0027B308 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B069CF02ACD604C0027B308 /* Preview Assets.xcassets */; };
+		6B069CF82ACD647E0027B308 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CF72ACD647E0027B308 /* LevelSelectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		6B069CEB2ACD60490027B308 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6B069CED2ACD604C0027B308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B069CF02ACD604C0027B308 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6B069CF72ACD647E0027B308 /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */,
 				6B069CEB2ACD60490027B308 /* ContentView.swift */,
+				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
 				6B069CED2ACD604C0027B308 /* Assets.xcassets */,
 				6B069CEF2ACD604C0027B308 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B069CF82ACD647E0027B308 /* LevelSelectView.swift in Sources */,
 				6B069CEC2ACD60490027B308 /* ContentView.swift in Sources */,
 				6B069CEA2ACD60490027B308 /* PumpkinSmashApp.swift in Sources */,
 			);
