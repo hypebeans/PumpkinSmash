@@ -13,7 +13,7 @@ struct GameFieldView: View {
     // let showHole: [Int] = [2, 6, 8, 10, 11, 12, 13, 14, 16, 18, 22] // 表示する穴の番号
     
     // difficulty → 難易度。0: かんたん, 1: ふつう 2: むずかしい
-    let difficulty: Int = 1
+    let difficulty: Int = 0
     
     var showHole: [Int] {
         // 難易度によって表示する穴の数を変更する
