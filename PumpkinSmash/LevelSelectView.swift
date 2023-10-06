@@ -12,7 +12,7 @@ struct LevelSelectView: View {
     @State var isNext = false
     
     
-    var body: some                                    View {
+    var body: some View {
         VStack {
             Text("レベルを選択")
                 .font(.title)
@@ -26,7 +26,7 @@ struct LevelSelectView: View {
                     .fill(.black)
                     .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                     .overlay(
-                        Text("簡単 🤡")
+                        Text("簡単 🤡") //TODO: ボタンの画像を作成
                             .font(.title)
                             .fontWeight(.black)
                             .foregroundColor(.white)

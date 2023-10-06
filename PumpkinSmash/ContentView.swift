@@ -19,7 +19,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Pumpkin");
+            Image("Logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
             Spacer()
             
             VStack {
@@ -28,7 +30,7 @@ struct ContentView: View {
                         .fill(.black)
                         .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                         .overlay(
-                            Text("START")
+                            Text("TAP TO START")
                                 .font(.title)
                                 .fontWeight(.black)
                                 .foregroundColor(.white)
