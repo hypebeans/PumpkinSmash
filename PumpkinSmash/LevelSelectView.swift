@@ -12,7 +12,7 @@ struct LevelSelectView: View {
     @State var isNext = false
     
     
-    var body: some View {
+    var body: some                                    View {
         VStack {
             Text("レベルを選択")
                 .font(.title)
