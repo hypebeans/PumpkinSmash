@@ -23,7 +23,7 @@ struct LevelSelectView: View {
                 isNext = true
             }) {
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(.black.gradient)
+                    .fill(.black)
                     .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                     .overlay(
                         Text("簡単 🤡")
@@ -40,7 +40,7 @@ struct LevelSelectView: View {
             
             Button(action: {}) {
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(.black.gradient)
+                    .fill(.black)
                     .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                     .overlay(
                         Text("普通 🤨")
@@ -51,7 +51,7 @@ struct LevelSelectView: View {
             }.padding()
             Button(action: {}) {
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(.black.gradient)
+                    .fill(.black)
                     .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                     .overlay(
                         Text("難しい 🗿")

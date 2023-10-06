@@ -11,7 +11,8 @@ import SwiftUI
 struct PumpkinSmashApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // ContentView()
+            GameFieldView()
         }
     }
 }

@@ -25,7 +25,7 @@ struct ContentView: View {
             VStack {
                 Button(action: {}) {
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(.black.gradient)
+                        .fill(.black)
                         .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                         .overlay(
                             Text("START")
