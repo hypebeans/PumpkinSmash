@@ -13,9 +13,9 @@
 		6B069CEE2ACD604C0027B308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B069CED2ACD604C0027B308 /* Assets.xcassets */; };
 		6B069CF12ACD604C0027B308 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B069CF02ACD604C0027B308 /* Preview Assets.xcassets */; };
 		6B069CF82ACD647E0027B308 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CF72ACD647E0027B308 /* LevelSelectView.swift */; };
-		6B7907242AD635B100AB8C49 /* KiwiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */; };
-		6B7907252AD635B100AB8C49 /* KiwiMaru-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */; };
-		6B7907262AD635B100AB8C49 /* KiwiMaru-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */; };
+		6B75354A2AD7D1FF000EFF1A /* KiwiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7535472AD7D1FE000EFF1A /* KiwiMaru-Regular.ttf */; };
+		6B75354B2AD7D1FF000EFF1A /* KiwiMaru-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7535482AD7D1FE000EFF1A /* KiwiMaru-Light.ttf */; };
+		6B75354C2AD7D1FF000EFF1A /* KiwiMaru-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7535492AD7D1FF000EFF1A /* KiwiMaru-Medium.ttf */; };
 		6B7907292AD6360000AB8C49 /* FontSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7907282AD6360000AB8C49 /* FontSample.swift */; };
 		6B79073E2AD7A97700AB8C49 /* ScoreResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B79073D2AD7A97700AB8C49 /* ScoreResultsView.swift */; };
 /* End PBXBuildFile section */
@@ -28,9 +28,9 @@
 		6B069CED2ACD604C0027B308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B069CF02ACD604C0027B308 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B069CF72ACD647E0027B308 /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
-		6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Regular.ttf"; path = "../KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
-		6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Medium.ttf"; path = "../KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
-		6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Light.ttf"; path = "../KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
+		6B7535472AD7D1FE000EFF1A /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Regular.ttf"; path = "../../../../../../../Downloads/Kiwi_Maru/KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
+		6B7535482AD7D1FE000EFF1A /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Light.ttf"; path = "../../../../../../../Downloads/Kiwi_Maru/KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
+		6B7535492AD7D1FF000EFF1A /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Medium.ttf"; path = "../../../../../../../Downloads/Kiwi_Maru/KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
 		6B7907272AD635C300AB8C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B7907282AD6360000AB8C49 /* FontSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSample.swift; sourceTree = "<group>"; };
 		6B79073D2AD7A97700AB8C49 /* ScoreResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreResultsView.swift; sourceTree = "<group>"; };
@@ -50,9 +50,9 @@
 		1D8056C12AD7A85800C306BD /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */,
-				6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */,
-				6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */,
+				6B7535482AD7D1FE000EFF1A /* KiwiMaru-Light.ttf */,
+				6B7535492AD7D1FF000EFF1A /* KiwiMaru-Medium.ttf */,
+				6B7535472AD7D1FE000EFF1A /* KiwiMaru-Regular.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -157,10 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B069CF12ACD604C0027B308 /* Preview Assets.xcassets in Resources */,
-				6B7907242AD635B100AB8C49 /* KiwiMaru-Regular.ttf in Resources */,
-				6B7907252AD635B100AB8C49 /* KiwiMaru-Medium.ttf in Resources */,
 				6B069CEE2ACD604C0027B308 /* Assets.xcassets in Resources */,
-				6B7907262AD635B100AB8C49 /* KiwiMaru-Light.ttf in Resources */,
+				6B75354A2AD7D1FF000EFF1A /* KiwiMaru-Regular.ttf in Resources */,
+				6B75354C2AD7D1FF000EFF1A /* KiwiMaru-Medium.ttf in Resources */,
+				6B75354B2AD7D1FF000EFF1A /* KiwiMaru-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
