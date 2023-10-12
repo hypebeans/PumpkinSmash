@@ -34,6 +34,7 @@ struct GameFieldView: View {
     
     var body: some View {
         ZStack {
+            //TODO: カスタム画像を作成(今週締め切り)
             // タブメニュー?
             VStack {
                 // 上のメニューバー
