@@ -27,7 +27,7 @@ struct LevelSelectView: View {
                     .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                     .overlay(
                         Text("簡単 🤡") //TODO: ボタンの画像を作成
-                            .font(.title)
+                            .font(.custom("Kiwi Maru", size: 30))
                             .fontWeight(.black)
                             .foregroundColor(.white)
                     )
@@ -44,7 +44,7 @@ struct LevelSelectView: View {
                     .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                     .overlay(
                         Text("普通 🤨")
-                            .font(.title)
+                            .font(.custom("Kiwi Maru", size: 30))
                             .fontWeight(.black)
                             .foregroundColor(.white)
                     )
@@ -55,7 +55,7 @@ struct LevelSelectView: View {
                     .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                     .overlay(
                         Text("難しい 🗿")
-                            .font(.title)
+                            .font(.custom("Kiwi Maru", size: 30))
                             .fontWeight(.black)
                             .foregroundColor(.white)
                     )

@@ -13,6 +13,10 @@
 		6B069CEE2ACD604C0027B308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B069CED2ACD604C0027B308 /* Assets.xcassets */; };
 		6B069CF12ACD604C0027B308 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B069CF02ACD604C0027B308 /* Preview Assets.xcassets */; };
 		6B069CF82ACD647E0027B308 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CF72ACD647E0027B308 /* LevelSelectView.swift */; };
+		6B7907242AD635B100AB8C49 /* KiwiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */; };
+		6B7907252AD635B100AB8C49 /* KiwiMaru-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */; };
+		6B7907262AD635B100AB8C49 /* KiwiMaru-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */; };
+		6B7907292AD6360000AB8C49 /* FontSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7907282AD6360000AB8C49 /* FontSample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,11 @@
 		6B069CED2ACD604C0027B308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B069CF02ACD604C0027B308 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B069CF72ACD647E0027B308 /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
+		6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
+		6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
+		6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
+		6B7907272AD635C300AB8C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6B7907282AD6360000AB8C49 /* FontSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +64,15 @@
 		6B069CE82ACD60490027B308 /* PumpkinSmash */ = {
 			isa = PBXGroup;
 			children = (
+				6B7907272AD635C300AB8C49 /* Info.plist */,
+				6B7907282AD6360000AB8C49 /* FontSample.swift */,
 				6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */,
 				6B069CEB2ACD60490027B308 /* ContentView.swift */,
 				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
 				1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */,
+				6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */,
+				6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */,
+				6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */,
 				6B069CED2ACD604C0027B308 /* Assets.xcassets */,
 				6B069CEF2ACD604C0027B308 /* Preview Content */,
 			);
@@ -132,7 +146,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B069CF12ACD604C0027B308 /* Preview Assets.xcassets in Resources */,
+				6B7907242AD635B100AB8C49 /* KiwiMaru-Regular.ttf in Resources */,
+				6B7907252AD635B100AB8C49 /* KiwiMaru-Medium.ttf in Resources */,
 				6B069CEE2ACD604C0027B308 /* Assets.xcassets in Resources */,
+				6B7907262AD635B100AB8C49 /* KiwiMaru-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B069CF82ACD647E0027B308 /* LevelSelectView.swift in Sources */,
+				6B7907292AD6360000AB8C49 /* FontSample.swift in Sources */,
 				6B069CEC2ACD60490027B308 /* ContentView.swift in Sources */,
 				6B069CEA2ACD60490027B308 /* PumpkinSmashApp.swift in Sources */,
 				1DFA46AA2ACEB0A700781FF4 /* GameFieldView.swift in Sources */,
@@ -280,6 +298,7 @@
 				DEVELOPMENT_TEAM = F2CW9SCDBL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PumpkinSmash/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -310,6 +329,7 @@
 				DEVELOPMENT_TEAM = F2CW9SCDBL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PumpkinSmash/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

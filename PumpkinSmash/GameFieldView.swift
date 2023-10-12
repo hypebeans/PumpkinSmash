@@ -12,8 +12,8 @@ struct GameFieldView: View {
     
     // let showHole: [Int] = [2, 6, 8, 10, 11, 12, 13, 14, 16, 18, 22] // 表示する穴の番号
     
-    // difficulty → 難易度。0: かんたん, 1: ふつう 2: むずかしい
-    let difficulty: Int = 0
+    // difficulty → 難易度。0: 簡単, 1: 普通 2: 難しい
+    let difficulty: Int = 1 // switchケーズに使用する
     
     var showHole: [Int] {
         // 難易度によって表示する穴の数を変更する
@@ -45,6 +45,7 @@ struct GameFieldView: View {
                     Spacer()
                     
                     // タイマー
+                    
                     Text("0:00") // TODO: あとで適したものに変更しよう
                     
                     Spacer()
