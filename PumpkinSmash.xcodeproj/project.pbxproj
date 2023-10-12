@@ -28,9 +28,9 @@
 		6B069CED2ACD604C0027B308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B069CF02ACD604C0027B308 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B069CF72ACD647E0027B308 /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
-		6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
-		6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
-		6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
+		6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Regular.ttf"; path = "../KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
+		6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Medium.ttf"; path = "../KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
+		6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Light.ttf"; path = "../KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
 		6B7907272AD635C300AB8C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B7907282AD6360000AB8C49 /* FontSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSample.swift; sourceTree = "<group>"; };
 		6B79073D2AD7A97700AB8C49 /* ScoreResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreResultsView.swift; sourceTree = "<group>"; };
@@ -84,9 +84,6 @@
 				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
 				1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */,
 				6B79073D2AD7A97700AB8C49 /* ScoreResultsView.swift */,
-				6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */,
-				6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */,
-				6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */,
 				6B069CED2ACD604C0027B308 /* Assets.xcassets */,
 				6B069CEF2ACD604C0027B308 /* Preview Content */,
 			);
