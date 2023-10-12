@@ -30,7 +30,7 @@
 		6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
 		6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
 		6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
-		6B7907272AD635C300AB8C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6B7907272AD635C300AB8C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B7907282AD6360000AB8C49 /* FontSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D8056C12AD7A85800C306BD /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */,
+				6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */,
+				6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		6B069CDD2ACD60480027B308 = {
 			isa = PBXGroup;
 			children = (
@@ -65,14 +75,12 @@
 			isa = PBXGroup;
 			children = (
 				6B7907272AD635C300AB8C49 /* Info.plist */,
+				1D8056C12AD7A85800C306BD /* fonts */,
 				6B7907282AD6360000AB8C49 /* FontSample.swift */,
 				6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */,
 				6B069CEB2ACD60490027B308 /* ContentView.swift */,
 				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
 				1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */,
-				6B7907232AD635B100AB8C49 /* KiwiMaru-Light.ttf */,
-				6B7907222AD635B100AB8C49 /* KiwiMaru-Medium.ttf */,
-				6B7907212AD635B000AB8C49 /* KiwiMaru-Regular.ttf */,
 				6B069CED2ACD604C0027B308 /* Assets.xcassets */,
 				6B069CEF2ACD604C0027B308 /* Preview Content */,
 			);
