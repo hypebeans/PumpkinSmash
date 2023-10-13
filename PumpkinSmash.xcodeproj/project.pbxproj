@@ -10,15 +10,16 @@
 		1DBC8C9D2AD8D50A00E75C59 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC8C9C2AD8D50A00E75C59 /* TimerManager.swift */; };
 		1DBC8C9F2AD8D51700E75C59 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC8C9E2AD8D51700E75C59 /* Helper.swift */; };
 		1DFA46AA2ACEB0A700781FF4 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */; };
-		1DFEE9182AD7D29700017E9F /* KiwiMaru-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFEE9152AD7D29700017E9F /* KiwiMaru-Light.ttf */; };
-		1DFEE9192AD7D29700017E9F /* KiwiMaru-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFEE9162AD7D29700017E9F /* KiwiMaru-Medium.ttf */; };
-		1DFEE91A2AD7D29700017E9F /* KiwiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFEE9172AD7D29700017E9F /* KiwiMaru-Regular.ttf */; };
 		6B069CEA2ACD60490027B308 /* PumpkinSmashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */; };
 		6B069CEC2ACD60490027B308 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CEB2ACD60490027B308 /* ContentView.swift */; };
 		6B069CEE2ACD604C0027B308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B069CED2ACD604C0027B308 /* Assets.xcassets */; };
 		6B069CF12ACD604C0027B308 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B069CF02ACD604C0027B308 /* Preview Assets.xcassets */; };
 		6B069CF82ACD647E0027B308 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CF72ACD647E0027B308 /* LevelSelectView.swift */; };
-		6B7907292AD6360000AB8C49 /* FontSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7907282AD6360000AB8C49 /* FontSample.swift */; };
+		6B75354E2AD8DD2F000EFF1A /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75354D2AD8DD2F000EFF1A /* LaunchScreenView.swift */; };
+		6B7535522AD8E118000EFF1A /* KiwiMaru-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B75354F2AD8E117000EFF1A /* KiwiMaru-Medium.ttf */; };
+		6B7535532AD8E118000EFF1A /* KiwiMaru-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7535502AD8E118000EFF1A /* KiwiMaru-Light.ttf */; };
+		6B7535542AD8E118000EFF1A /* KiwiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7535512AD8E118000EFF1A /* KiwiMaru-Regular.ttf */; };
+		6B7535562AD8E4B3000EFF1A /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7535552AD8E4B3000EFF1A /* TitleView.swift */; };
 		6B79073E2AD7A97700AB8C49 /* ScoreResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B79073D2AD7A97700AB8C49 /* ScoreResultsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,17 +27,18 @@
 		1DBC8C9C2AD8D50A00E75C59 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		1DBC8C9E2AD8D51700E75C59 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
-		1DFEE9152AD7D29700017E9F /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Light.ttf"; path = "../../../KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
-		1DFEE9162AD7D29700017E9F /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Medium.ttf"; path = "../../../KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
-		1DFEE9172AD7D29700017E9F /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Regular.ttf"; path = "../../../KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
 		6B069CE62ACD60490027B308 /* PumpkinSmash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PumpkinSmash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PumpkinSmashApp.swift; sourceTree = "<group>"; };
 		6B069CEB2ACD60490027B308 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6B069CED2ACD604C0027B308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B069CF02ACD604C0027B308 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B069CF72ACD647E0027B308 /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
+		6B75354D2AD8DD2F000EFF1A /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		6B75354F2AD8E117000EFF1A /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Medium.ttf"; path = "../../../../../../../Downloads/Kiwi_Maru/KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
+		6B7535502AD8E118000EFF1A /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Light.ttf"; path = "../../../../../../../Downloads/Kiwi_Maru/KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
+		6B7535512AD8E118000EFF1A /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Regular.ttf"; path = "../../../../../../../Downloads/Kiwi_Maru/KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
+		6B7535552AD8E4B3000EFF1A /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		6B7907272AD635C300AB8C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B7907282AD6360000AB8C49 /* FontSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSample.swift; sourceTree = "<group>"; };
 		6B79073D2AD7A97700AB8C49 /* ScoreResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,9 +56,9 @@
 		1D8056C12AD7A85800C306BD /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				1DFEE9152AD7D29700017E9F /* KiwiMaru-Light.ttf */,
-				1DFEE9162AD7D29700017E9F /* KiwiMaru-Medium.ttf */,
-				1DFEE9172AD7D29700017E9F /* KiwiMaru-Regular.ttf */,
+				6B7535502AD8E118000EFF1A /* KiwiMaru-Light.ttf */,
+				6B75354F2AD8E117000EFF1A /* KiwiMaru-Medium.ttf */,
+				6B7535512AD8E118000EFF1A /* KiwiMaru-Regular.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -101,9 +103,10 @@
 			children = (
 				6B7907272AD635C300AB8C49 /* Info.plist */,
 				1D8056C12AD7A85800C306BD /* fonts */,
-				6B7907282AD6360000AB8C49 /* FontSample.swift */,
 				6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */,
 				6B069CEB2ACD60490027B308 /* ContentView.swift */,
+				6B7535552AD8E4B3000EFF1A /* TitleView.swift */,
+				6B75354D2AD8DD2F000EFF1A /* LaunchScreenView.swift */,
 				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
 				1DBC8C9A2AD8D11300E75C59 /* GameField */,
 				6B069CED2ACD604C0027B308 /* Assets.xcassets */,
@@ -178,11 +181,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DFEE91A2AD7D29700017E9F /* KiwiMaru-Regular.ttf in Resources */,
+				6B7535532AD8E118000EFF1A /* KiwiMaru-Light.ttf in Resources */,
 				6B069CF12ACD604C0027B308 /* Preview Assets.xcassets in Resources */,
 				6B069CEE2ACD604C0027B308 /* Assets.xcassets in Resources */,
-				1DFEE9182AD7D29700017E9F /* KiwiMaru-Light.ttf in Resources */,
-				1DFEE9192AD7D29700017E9F /* KiwiMaru-Medium.ttf in Resources */,
+				6B7535522AD8E118000EFF1A /* KiwiMaru-Medium.ttf in Resources */,
+				6B7535542AD8E118000EFF1A /* KiwiMaru-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,12 +198,13 @@
 			files = (
 				6B79073E2AD7A97700AB8C49 /* ScoreResultsView.swift in Sources */,
 				6B069CF82ACD647E0027B308 /* LevelSelectView.swift in Sources */,
-				6B7907292AD6360000AB8C49 /* FontSample.swift in Sources */,
 				6B069CEC2ACD60490027B308 /* ContentView.swift in Sources */,
 				6B069CEA2ACD60490027B308 /* PumpkinSmashApp.swift in Sources */,
 				1DBC8C9D2AD8D50A00E75C59 /* TimerManager.swift in Sources */,
+				6B7535562AD8E4B3000EFF1A /* TitleView.swift in Sources */,
 				1DFA46AA2ACEB0A700781FF4 /* GameFieldView.swift in Sources */,
 				1DBC8C9F2AD8D51700E75C59 /* Helper.swift in Sources */,
+				6B75354E2AD8DD2F000EFF1A /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
