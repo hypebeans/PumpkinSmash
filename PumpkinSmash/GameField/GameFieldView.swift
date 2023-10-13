@@ -11,8 +11,11 @@ import AVFoundation
 struct GameFieldView: View {
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
+    // ランダムに画像を選ぶ
+    @State var buttonImage = SelectPumpkinImage().randomSelect()
     // グリッドの設定
     let grids = Array(repeating: GridItem(.fixed(UIScreen.main.bounds.width / 5 - 10)), count: 5)
+    
     // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
     // TODO: Bindingしよう
     let difficulty: Int = 1 // switchケースに使用する
@@ -36,6 +39,8 @@ struct GameFieldView: View {
     @State var buttonPosition = 0
     // ゲームがスタートしているか
     @State var isGameStarted = false
+    // かぼちゃ画像のアニメーション
+    @State var buttonAnimation: CGSize = CGSize(width: 0, height: 0)
     
     // タップサウンド
     let tapSound = try! AVAudioPlayer(data: NSDataAsset(name: "TapSound")!.data)
@@ -59,7 +64,6 @@ struct GameFieldView: View {
                     Spacer()
                     
                     // タイマー
-                    
                     Text("残り\(timerManager.secondsLeft)秒") // TODO: あとで適したものに変更しよう
                         .font((.custom("Kiwi Maru", size: 60)))
                     
@@ -91,14 +95,21 @@ struct GameFieldView: View {
                         ForEach ((0...24), id: \.self) { num in
                             if buttonPosition == num {
                                 Button(action: {
+                                    buttonImage = SelectPumpkinImage().randomSelect()
                                     playSound()
                                     buttonPosition = showHole.shuffled()[0]
+                                    buttonAnimation.height = 0
                                     print("Button position is \(buttonPosition)")
                                 }) {
-                                    Image("Ookawa_Pumpkin")
+                                    Image(buttonImage)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .offset(y: -15)
+                                        .offset(buttonAnimation)
+                                        .onAppear() {
+                                            withAnimation(.spring){
+                                                buttonAnimation.height = -30
+                                            }
+                                        }
                                 }
                                 .opacity(isGameStarted ? 1.0 : 0.0)
                             } else {
