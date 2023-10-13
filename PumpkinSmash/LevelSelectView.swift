@@ -16,12 +16,20 @@ struct LevelSelectView: View {
         ZStack {
             Color("SecondaryColor")
                 .ignoresSafeArea()
+            
             VStack {
                 Text("レベルを選択")
-                    .font(.title)
+                    .font(.custom("Kiwi Maru", size: 36))
                     .fontWeight(.bold)
+                    .foregroundColor(Color("TertiaryColor"))
                     .padding()
-            
+                Spacer()
+                Text("自分の程度に挑戦しよう！ 💪")
+                    .font(.custom("Kiwi Maru", size: 16))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("TertiaryColor"))
+                    .padding(.trailing, 5)
+                Spacer()
                 Button(action: {
                     isNext = true
                 }) {
@@ -34,11 +42,14 @@ struct LevelSelectView: View {
                                 .font(.custom("Kiwi Maru", size: 30))
                                 .fontWeight(.black)
                                 .foregroundColor(.white)
+//                            Spacer()
+//                            Text("初心者向けにはおすすめよー 😃")
+//                                .font(.custom("Kiwi Maru", size: 16))
+//                                .fontWeight(.black)
+//                                .foregroundColor(.white)
                         )
                 }
-    //            .alert(isPresented: $isNext) {
-    //                Alert(title: Text("CONTINUE"), message: Text("Lanjut?"), primaryButton: Button("YES"), secondaryButton: Button("NO", role: .destructive))
-    //            }
+
                 .padding()
                 
                 

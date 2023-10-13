@@ -15,13 +15,35 @@ struct TitleView: View {
                     Color("PrimaryColor")
                         .ignoresSafeArea()
                     VStack {
+                        HStack {
+                            Button(action: {
+                                
+                            }) {
+                                Image(systemName: "info.circle.fill")
+                                    .foregroundColor(Color("FourthColor"))
+                                    .scaleEffect(1.5)
+                            }.padding(.leading, 20)
+                            Text("遊び方 🎃")
+                                .font(.custom("Kiwi Maru", size: 16))
+                                .foregroundColor(Color("FourthColor"))
+                                .padding(.leading, 2)
+                            Spacer()
+                            
+                        }
+                        .padding()
+                        
+                        // ロゴ
                         Image("Logo")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                            .scaleEffect(1.5)
+                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                         Spacer()
         
                         VStack {
-                            Button(action: {}) {
+                            Button(action: {
+                                //TODO: レベル選択に移動する
+                            }) {
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(.black)
                                     .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
@@ -33,6 +55,17 @@ struct TitleView: View {
                                     )
                              Spacer()
                             }.padding()
+                        }
+                        
+                        Spacer()
+                        
+                        ZStack {
+                            VStack {
+                            // TODO: 他の画像を追加こと
+                                Image("Ookawa_Pumpkin")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }
                         }
         
                     }
