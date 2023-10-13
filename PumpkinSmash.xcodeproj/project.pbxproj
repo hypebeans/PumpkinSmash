@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		1DBC8C9D2AD8D50A00E75C59 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC8C9C2AD8D50A00E75C59 /* TimerManager.swift */; };
 		1DBC8C9F2AD8D51700E75C59 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC8C9E2AD8D51700E75C59 /* Helper.swift */; };
-		1DBC8CA32AD8E61800E75C59 /* KiwiMaru-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DBC8CA02AD8E61800E75C59 /* KiwiMaru-Medium.ttf */; };
-		1DBC8CA42AD8E61800E75C59 /* KiwiMaru-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DBC8CA12AD8E61800E75C59 /* KiwiMaru-Light.ttf */; };
-		1DBC8CA52AD8E61800E75C59 /* KiwiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DBC8CA22AD8E61800E75C59 /* KiwiMaru-Regular.ttf */; };
 		1DBC8CA72AD8ED2E00E75C59 /* SelectPumpkinImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC8CA62AD8ED2E00E75C59 /* SelectPumpkinImage.swift */; };
 		1DFA46AA2ACEB0A700781FF4 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */; };
 		6B069CEA2ACD60490027B308 /* PumpkinSmashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */; };
@@ -21,15 +18,15 @@
 		6B069CF82ACD647E0027B308 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B069CF72ACD647E0027B308 /* LevelSelectView.swift */; };
 		6B75354E2AD8DD2F000EFF1A /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75354D2AD8DD2F000EFF1A /* LaunchScreenView.swift */; };
 		6B7535562AD8E4B3000EFF1A /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7535552AD8E4B3000EFF1A /* TitleView.swift */; };
+		6B75355A2AD8F04B000EFF1A /* KiwiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7535572AD8F04B000EFF1A /* KiwiMaru-Regular.ttf */; };
+		6B75355B2AD8F04B000EFF1A /* KiwiMaru-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7535582AD8F04B000EFF1A /* KiwiMaru-Light.ttf */; };
+		6B75355C2AD8F04B000EFF1A /* KiwiMaru-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7535592AD8F04B000EFF1A /* KiwiMaru-Medium.ttf */; };
 		6B79073E2AD7A97700AB8C49 /* ScoreResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B79073D2AD7A97700AB8C49 /* ScoreResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DBC8C9C2AD8D50A00E75C59 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		1DBC8C9E2AD8D51700E75C59 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		1DBC8CA02AD8E61800E75C59 /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Medium.ttf"; path = "../../../KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
-		1DBC8CA12AD8E61800E75C59 /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Light.ttf"; path = "../../../KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
-		1DBC8CA22AD8E61800E75C59 /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Regular.ttf"; path = "../../../KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
 		1DBC8CA62AD8ED2E00E75C59 /* SelectPumpkinImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPumpkinImage.swift; sourceTree = "<group>"; };
 		1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
 		6B069CE62ACD60490027B308 /* PumpkinSmash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PumpkinSmash.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +37,9 @@
 		6B069CF72ACD647E0027B308 /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
 		6B75354D2AD8DD2F000EFF1A /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		6B7535552AD8E4B3000EFF1A /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		6B7535572AD8F04B000EFF1A /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Regular.ttf"; path = "../../../../../../../Downloads/Kiwi_Maru/KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
+		6B7535582AD8F04B000EFF1A /* KiwiMaru-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Light.ttf"; path = "../../../../../../../Downloads/Kiwi_Maru/KiwiMaru-Light.ttf"; sourceTree = "<group>"; };
+		6B7535592AD8F04B000EFF1A /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KiwiMaru-Medium.ttf"; path = "../../../../../../../Downloads/Kiwi_Maru/KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
 		6B7907272AD635C300AB8C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B79073D2AD7A97700AB8C49 /* ScoreResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,9 +58,9 @@
 		1D8056C12AD7A85800C306BD /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				1DBC8CA12AD8E61800E75C59 /* KiwiMaru-Light.ttf */,
-				1DBC8CA02AD8E61800E75C59 /* KiwiMaru-Medium.ttf */,
-				1DBC8CA22AD8E61800E75C59 /* KiwiMaru-Regular.ttf */,
+				6B7535582AD8F04B000EFF1A /* KiwiMaru-Light.ttf */,
+				6B7535592AD8F04B000EFF1A /* KiwiMaru-Medium.ttf */,
+				6B7535572AD8F04B000EFF1A /* KiwiMaru-Regular.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -184,11 +184,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DBC8CA42AD8E61800E75C59 /* KiwiMaru-Light.ttf in Resources */,
+				6B75355B2AD8F04B000EFF1A /* KiwiMaru-Light.ttf in Resources */,
 				6B069CF12ACD604C0027B308 /* Preview Assets.xcassets in Resources */,
+				6B75355A2AD8F04B000EFF1A /* KiwiMaru-Regular.ttf in Resources */,
+				6B75355C2AD8F04B000EFF1A /* KiwiMaru-Medium.ttf in Resources */,
 				6B069CEE2ACD604C0027B308 /* Assets.xcassets in Resources */,
-				1DBC8CA32AD8E61800E75C59 /* KiwiMaru-Medium.ttf in Resources */,
-				1DBC8CA52AD8E61800E75C59 /* KiwiMaru-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
