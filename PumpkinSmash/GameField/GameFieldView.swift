@@ -9,11 +9,13 @@ import SwiftUI
 import AVFoundation
 
 struct GameFieldView: View {
+    // タイマーを作成
+    @StateObject var timerManager = TimerManager()
     // グリッドの設定
     let grids = Array(repeating: GridItem(.fixed(UIScreen.main.bounds.width / 5 - 10)), count: 5)
-    // difficulty → 難易度。0: 簡単, 1: 普通 2: 難しい
+    // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
     // TODO: Bindingしよう
-    let difficulty: Int = 2 // switchケースに使用する
+    let difficulty: Int = 1 // switchケースに使用する
     var showHole: [Int] {
         // 難易度によって表示する穴の数を変更する
         switch difficulty {
@@ -34,8 +36,6 @@ struct GameFieldView: View {
     @State var buttonPosition = 0
     // ゲームがスタートしているか
     @State var isGameStarted = false
-    // タイマーを作成
-    @StateObject var timerManager = TimerManager()
     
     // タップサウンド
     let tapSound = try! AVAudioPlayer(data: NSDataAsset(name: "TapSound")!.data)

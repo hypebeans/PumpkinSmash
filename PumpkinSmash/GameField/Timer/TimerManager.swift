@@ -11,6 +11,20 @@ import SwiftUI
 class TimerManager: ObservableObject {
     @Published var timerMode: TimerMode = .initial
     @Published var secondsLeft = 10
+    
+    init() {
+        switch GameFieldView().difficulty {
+        case 0:
+            self.secondsLeft = 15
+        case 1:
+            self.secondsLeft = 10
+        case 2:
+            self.secondsLeft = 5
+        default:
+            self.secondsLeft = 10
+        }
+    }
+    
     @Published var isTimerStoped = false
     var timer = Timer()
     
@@ -18,6 +32,7 @@ class TimerManager: ObservableObject {
         timerMode = .running
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
             self.secondsLeft -= 1
+            // タイマーが0になった時にマイナスにならないようにする
             if self.secondsLeft == 0 {
                 self.timerMode = .initial
                 self.secondsLeft = 0
