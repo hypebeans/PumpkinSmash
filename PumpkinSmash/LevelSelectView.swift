@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct LevelSelectView: View {
+    // 画面遷移を制御
     @State var isNext = false
     // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
     @State var difficulty = 0
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 Color("SecondaryColor")
                     .ignoresSafeArea()
@@ -31,6 +32,15 @@ struct LevelSelectView: View {
                         .foregroundColor(Color("TertiaryColor"))
                         .padding(.trailing, 5)
                     Spacer()
+                    
+                    // ボタンが押された時に遷移する
+                    NavigationLink(
+                        destination: GameFieldView(difficulty: self.difficulty)
+                            .navigationBarBackButtonHidden(),
+                        isActive: $isNext){
+                            // 空のView
+                            EmptyView()
+                        }
                     
                     // 簡単
                     Button(action: {
@@ -88,11 +98,6 @@ struct LevelSelectView: View {
                             )
                     }
                     .padding()
-                }
-                // ボタンが押された時に正しく画面遷移を行う
-                .navigationDestination(isPresented: $isNext) {
-                    GameFieldView(difficulty: $difficulty)
-                        .navigationBarBackButtonHidden()
                 }
             }
         }

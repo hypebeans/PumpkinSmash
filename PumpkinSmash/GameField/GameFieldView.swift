@@ -10,18 +10,17 @@ import AVFoundation
 
 struct GameFieldView: View {
     // タイマーを作成
-    @ObservedObject var timerManager = TimerManager()
+    @StateObject var timerManager = TimerManager()
     // ランダムにかぼちゃの画像を選ぶ
     @State var buttonImage = SelectPumpkinImage().randomSelect()
     // グリッドの設定
     let grids = Array(repeating: GridItem(.fixed(UIScreen.main.bounds.width / 5 - 10)), count: 5)
     
-    // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
-    // TODO: Bindingしよう
-    @Binding var  difficulty: Int // switchケースに使用する
+    // difficulty → 難易度 LevelSelectViewで選択
+    // 0: 簡単, 1: 普通 2: 難しい
+    let difficulty: Int
     var showHole: [Int] {
         // 難易度によって表示する穴の数を変更する
-        // 残り時間も設定するように変更
         switch difficulty {
         case 0:
             return [2, 6, 8, 10, 12, 14, 16, 18, 22]
@@ -143,39 +142,30 @@ struct GameFieldView: View {
                 .padding(.bottom, 30)
             }
         }
+        .onAppear() {
+            // 残り時間を設定
+            switch difficulty {
+            case 0:
+                timerManager.secondsLeft = 15
+            case 1:
+                timerManager.secondsLeft = 10
+            case 2:
+                timerManager.secondsLeft = 5
+            default:
+                timerManager.secondsLeft = 0
+            }
+            
+        }
         .fullScreenCover(isPresented: $timerManager.isTimerStoped, content: {
             ScoreResultsView()
         })
     }
 }
 
-struct Hole: View {
-    var body: some View {
-        ZStack {
-            Image("Hole")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 80, height: 90)
-        }
-    }
-}
-
-struct DummyHole: View {
-    var body: some View {
-        ZStack {
-            Image("Hole")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .opacity(0.0)
-                .frame(width: 80, height: 90)
-        }
-    }
-}
-
-// FIXME: .constant(0)はデバッグ用です
+// FIXME: (difficulty: 0)はデバッグ用です
 struct GameGieldView_Previews: PreviewProvider {
     static var previews: some View {
-        GameFieldView(difficulty: .constant(0))
+        GameFieldView(difficulty: 0)
         // Hole()
     }
 }
