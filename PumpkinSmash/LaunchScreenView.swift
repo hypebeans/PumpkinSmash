@@ -20,7 +20,7 @@ struct LaunchScreenView: View {
             Image("animepumpkin\(index)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding()
                 .onReceive(timer) { _ in
                     index += 1

@@ -10,21 +10,7 @@ import SwiftUI
 
 class TimerManager: ObservableObject {
     @Published var timerMode: TimerMode = .initial
-    @Published var secondsLeft = 10
-    
-    init() {
-        switch GameFieldView().difficulty {
-        case 0:
-            self.secondsLeft = 15
-        case 1:
-            self.secondsLeft = 10
-        case 2:
-            self.secondsLeft = 5
-        default:
-            self.secondsLeft = 10
-        }
-    }
-    
+    @Published var secondsLeft = 10 // GameFieldViewから代入される
     @Published var isTimerStoped = false
     var timer = Timer()
     

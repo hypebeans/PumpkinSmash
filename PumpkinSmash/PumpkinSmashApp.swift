@@ -12,7 +12,8 @@ struct PumpkinSmashApp: App {
     var body: some Scene {
         WindowGroup {
 //             ContentView()
-            GameFieldView()
+//            GameFieldView(difficulty: .constant(0))
+            LevelSelectView()
         }
     }
 }

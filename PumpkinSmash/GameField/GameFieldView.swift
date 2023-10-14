@@ -10,17 +10,18 @@ import AVFoundation
 
 struct GameFieldView: View {
     // タイマーを作成
-    @StateObject var timerManager = TimerManager()
-    // ランダムに画像を選ぶ
+    @ObservedObject var timerManager = TimerManager()
+    // ランダムにかぼちゃの画像を選ぶ
     @State var buttonImage = SelectPumpkinImage().randomSelect()
     // グリッドの設定
     let grids = Array(repeating: GridItem(.fixed(UIScreen.main.bounds.width / 5 - 10)), count: 5)
     
     // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
     // TODO: Bindingしよう
-    let difficulty: Int = 1 // switchケースに使用する
+    @Binding var  difficulty: Int // switchケースに使用する
     var showHole: [Int] {
         // 難易度によって表示する穴の数を変更する
+        // 残り時間も設定するように変更
         switch difficulty {
         case 0:
             return [2, 6, 8, 10, 12, 14, 16, 18, 22]
@@ -35,6 +36,7 @@ struct GameFieldView: View {
             return []
         }
     }
+    
     // ランダムでボタンを表示する
     @State var buttonPosition = 0
     // ゲームがスタートしているか
@@ -50,6 +52,7 @@ struct GameFieldView: View {
         tapSound.currentTime = 0
         tapSound.play()
     }
+    
     var body: some View {
         ZStack {
             //TODO: カスタム画像を作成(今週締め切り)
@@ -169,9 +172,10 @@ struct DummyHole: View {
     }
 }
 
+// FIXME: .constant(0)はデバッグ用です
 struct GameGieldView_Previews: PreviewProvider {
     static var previews: some View {
-        GameFieldView()
+        GameFieldView(difficulty: .constant(0))
         // Hole()
     }
 }

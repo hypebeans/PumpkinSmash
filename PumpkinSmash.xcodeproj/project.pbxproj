@@ -107,9 +107,9 @@
 				6B7907272AD635C300AB8C49 /* Info.plist */,
 				1D8056C12AD7A85800C306BD /* fonts */,
 				6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */,
+				6B75354D2AD8DD2F000EFF1A /* LaunchScreenView.swift */,
 				6B069CEB2ACD60490027B308 /* ContentView.swift */,
 				6B7535552AD8E4B3000EFF1A /* TitleView.swift */,
-				6B75354D2AD8DD2F000EFF1A /* LaunchScreenView.swift */,
 				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
 				1DBC8C9A2AD8D11300E75C59 /* GameField */,
 				6B069CED2ACD604C0027B308 /* Assets.xcassets */,
@@ -348,7 +348,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,7 +379,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

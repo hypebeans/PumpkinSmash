@@ -81,6 +81,8 @@ struct ScoreResultsView: View {
     }
 }
 
-#Preview {
-    ScoreResultsView()
+struct ScoreResultView_Previews: PreviewProvider {
+    static var previews: some View {
+        ScoreResultsView()
+    }
 }
