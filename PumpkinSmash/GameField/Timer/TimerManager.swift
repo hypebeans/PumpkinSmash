@@ -10,7 +10,7 @@ import SwiftUI
 
 class TimerManager: ObservableObject {
     @Published var timerMode: TimerMode = .initial
-    @Published var secondsLeft = 10 // TODO: 選択された難易度から残り時間も選択できるようにする
+    @Published var secondsLeft = 10
     @Published var isTimerStoped = false
     var timer = Timer()
     

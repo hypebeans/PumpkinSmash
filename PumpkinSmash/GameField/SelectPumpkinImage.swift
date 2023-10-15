@@ -8,8 +8,22 @@
 import Foundation
 
 struct SelectPumpkinImage {
+    // ゲームの難易度
+    var difficulty: Int = 0
+    
     // かぼちゃ画像の配列
-    let pumpkinImage:[String] = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin", "Bomb_Pumpkin", "OverworkCat_Pumpkin"]
+    var pumpkinImage: [String] {
+        switch difficulty {
+        case 0:
+            return ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
+        case 1:
+            return ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
+        case 2:
+            return ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin", "Bomb_Pumpkin", "OverworkCat_Pumpkin"]
+        default:
+            return []
+        }
+    }
     
     // 画像をランダムに返す
     func randomSelect() -> String {

@@ -72,7 +72,7 @@ struct GameFieldView: View {
                     Spacer()
                     
                     // タイマー
-                    Text("残り\(timerManager.secondsLeft)秒") // TODO: あとで適したものに変更しよう
+                    Text("残り\(timerManager.secondsLeft)秒")
                         .font((.custom("Kiwi Maru", size: 60)))
                     
                     Spacer()
@@ -168,10 +168,9 @@ struct GameFieldView: View {
     }
 }
 
-// FIXME: (difficulty: 0)はデバッグ用です
+// FIXME: (difficulty: 0)はデバッグ用です。数字を変更すると難易度が変化します
 struct GameGieldView_Previews: PreviewProvider {
     static var previews: some View {
         GameFieldView(difficulty: 0)
-        // Hole()
     }
 }
