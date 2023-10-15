@@ -54,7 +54,13 @@ struct GameFieldView: View {
     
     var body: some View {
         ZStack {
-            //TODO: カスタム画像を作成(今週締め切り)
+            Image("GameBG")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .scaleEffect(1.25)
+                .offset(x: 0.0, y: -60)
+                .opacity(0.6)
+                .ignoresSafeArea()
             // タブメニューとグリッド
             VStack {
                 // メニューバー
