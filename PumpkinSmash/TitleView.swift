@@ -65,43 +65,6 @@ struct TitleView: View {
                         Image("Ookawa_Pumpkin")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-<<<<<<< Updated upstream
-=======
-                            .scaleEffect(1.25)
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        Spacer()
-        
-                        VStack {
-                            Button(action: {
-                                //TODO: レベル選択に移動する
-                            }) {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color("PrimaryColor"))
-                                    .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
-                                    .overlay(
-                                        // TODO: ボタン背景
-                                        Text("🎃 TAP TO START 🎃")
-                                            .font(.custom("Kiwi Maru", size: 30))
-                                            .fontWeight(.black)
-                                            .foregroundColor(.white)
-                                    )
-                                    .padding()
-                             Spacer()
-                            }.padding()
-                        }
-                        
-                        Spacer()
-                        
-                        ZStack {
-                            VStack {
-                            // TODO: 他の画像を追加こと
-                                Image("Ookawa_Pumpkin")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            }
-                        }
-        
->>>>>>> Stashed changes
                     }
                 }
                 

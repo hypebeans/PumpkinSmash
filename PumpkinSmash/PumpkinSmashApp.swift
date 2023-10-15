@@ -12,11 +12,7 @@ struct PumpkinSmashApp: App {
     var body: some Scene {
         WindowGroup {
 //             ContentView()
-<<<<<<< Updated upstream
 //            GameFieldView(difficulty: .constant(0))
-=======
-//            GameFieldView()
->>>>>>> Stashed changes
             LevelSelectView()
         }
     }
