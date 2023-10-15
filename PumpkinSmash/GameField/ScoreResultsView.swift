@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ScoreResultsView: View {
+    @Binding var pumpkinPoints: Int
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
         ZStack {
             Color("PrimaryColor")
@@ -28,7 +30,7 @@ struct ScoreResultsView: View {
                     Image("OverworkCat_Pumpkin")
                         .resizable()
                         .aspectRatio(contentMode: .fit) //TODO: 背景の変更
-                    Text("99")
+                    Text("\(pumpkinPoints)")
                         .font(.custom("Kiwi Maru", size: 96))
                         .fontWeight(.medium)
                         .foregroundColor(Color("FourthColor"))
@@ -38,6 +40,7 @@ struct ScoreResultsView: View {
                 
                 HStack {
                     Spacer()
+                    // メニューに戻るボタン
                     Button(action: {
                         
                     }) {
@@ -53,8 +56,9 @@ struct ScoreResultsView: View {
                             )
                     }
                     
+                    // ゲームやり直すボタン
                     Button(action: {
-                        
+                        dismiss()
                     }) {
                         RoundedRectangle(cornerRadius: 15)
                         // TODO: カスタム画像のボタン（今週も締め切り 🗿）
@@ -83,6 +87,6 @@ struct ScoreResultsView: View {
 
 struct ScoreResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreResultsView()
+        ScoreResultsView(pumpkinPoints: .constant(99))
     }
 }

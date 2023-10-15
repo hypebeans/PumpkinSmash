@@ -12,6 +12,7 @@ struct SelectPumpkinImage {
     var difficulty: Int = 0
     
     // かぼちゃ画像の配列
+    // 難易度によって表示されるかぼちゃの画像が変化する
     var pumpkinImage: [String] {
         switch difficulty {
         case 0:

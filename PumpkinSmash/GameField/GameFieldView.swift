@@ -11,6 +11,8 @@ import AVFoundation
 struct GameFieldView: View {
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
+    // 制限時間を設定
+    @State var setTime: Int = 0
     // ランダムにかぼちゃの画像を選ぶ
     @State var buttonImage = SelectPumpkinImage().randomSelect()
     // グリッドの設定
@@ -18,7 +20,7 @@ struct GameFieldView: View {
     
     // difficulty → 難易度 LevelSelectViewで選択
     // 0: 簡単, 1: 普通 2: 難しい
-    let difficulty: Int
+    let difficulty: Int         // 難易度
     var showHole: [Int] {
         // 難易度によって表示する穴の数を変更する
         switch difficulty {
@@ -42,8 +44,10 @@ struct GameFieldView: View {
     @State var isGameStarted = false
     // かぼちゃ画像のアニメーション
     @State var buttonAnimation: CGSize = CGSize(width: 0, height: 0)
+    // かぼちゃの点数
+    @State var pumpkinPoints: Int = 0
     
-    // タップサウンド
+    // タップサウンドを再生する
     let tapSound = try! AVAudioPlayer(data: NSDataAsset(name: "TapSound")!.data)
     func playSound() {
         // 連打した時に音が重ならないようにする
@@ -55,17 +59,18 @@ struct GameFieldView: View {
     var body: some View {
         ZStack {
             Image("GameBG")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .scaleEffect(1.2)
-                            .offset(x: -25, y: -60)
-                            .opacity(0.8)
-                            .ignoresSafeArea()
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .scaleEffect(1.2)
+                .offset(x: -25, y: -60)
+                .opacity(0.8)
+                .ignoresSafeArea()
+            
             // タブメニューとグリッド
             VStack {
                 // メニューバー
                 HStack {
-                    // メニューボタン
+                    // メニューボタン(ダミーです)
                     Image(systemName: "slider.horizontal.3")
                         .opacity(0.0)
                     
@@ -98,22 +103,44 @@ struct GameFieldView: View {
                             }
                         }
                     }
+                    
                     // ボタン(ランダム)
                     LazyVGrid(columns: grids) {
                         ForEach ((0...24), id: \.self) { num in
                             if buttonPosition == num {
                                 Button(action: {
-                                    buttonImage = SelectPumpkinImage().randomSelect()
-                                    playSound()
-                                    buttonPosition = showHole.shuffled()[0]
-                                    buttonAnimation.height = 0
-                                    print("Button position is \(buttonPosition)")
+                                    // 押された画像の種類によって点数を振り分ける
+                                    switch buttonImage {
+                                    case "Normal_Pumpkin":
+                                        pumpkinPoints += 1
+                                        print("Normal_Pumpkin. point: \(pumpkinPoints)")
+                                    case "Gold_Pumpkin":
+                                        pumpkinPoints += 5
+                                        print("Gold_Pumpkin. point: \(pumpkinPoints)")
+                                    case "Ookawa_Pumpkin":
+                                        pumpkinPoints += 10
+                                        print("Ookawa_Pumpkin. point: \(pumpkinPoints)")
+                                    case "Bomb_Pumpkin":
+                                        pumpkinPoints -= 10
+                                        print("Bomb_Pumpkin. point: \(pumpkinPoints)")
+                                    case "OverworkCat_Pumpkin":
+                                        pumpkinPoints -= 20
+                                        print("OverworkCat_Pumpkin. point: \(pumpkinPoints)")
+                                    default:
+                                        pumpkinPoints = 0
+                                    }
+                                    playSound() // タップ音を再生する
+                                    buttonPosition = showHole.shuffled()[0] // ボタンが表示される場所をランダムで選択する
+                                    buttonAnimation.height = 0 // アニメーション用に初期値に戻す
                                 }) {
                                     Image(buttonImage)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .offset(buttonAnimation)
                                         .onAppear() {
+                                            // かぼちゃの種類をランダムに選択する
+                                            buttonImage = SelectPumpkinImage().randomSelect()
+                                            // かぼちゃの登場アニメーション
                                             withAnimation(.spring){
                                                 buttonAnimation.height = -30
                                             }
@@ -148,23 +175,35 @@ struct GameFieldView: View {
                 .padding(.bottom, 30)
             }
         }
+        // GameFieldViewが呼び出された時に残り時間を設定する
         .onAppear() {
             // 残り時間を設定
             switch difficulty {
             case 0:
-                timerManager.secondsLeft = 15
+                setTime = 15
             case 1:
-                timerManager.secondsLeft = 10
+                setTime = 10
             case 2:
-                timerManager.secondsLeft = 5
+                setTime = 5
             default:
-                timerManager.secondsLeft = 0
+                setTime = 0
             }
+            timerManager.secondsLeft = setTime
             
         }
-        .fullScreenCover(isPresented: $timerManager.isTimerStoped, content: {
-            ScoreResultsView()
-        })
+        .fullScreenCover(
+            isPresented: $timerManager.isTimerStoped,
+            onDismiss: {
+                // ゲームを初期状態に戻す
+                isGameStarted = false               // ゲーム開始フラグをリセット
+                buttonPosition = 0                  // ボタンの場所をリセット
+                pumpkinPoints = 0                   // 得点をリセット
+                timerManager.secondsLeft = setTime  // 残り時間をリセット
+            },
+            content: {
+                ScoreResultsView(pumpkinPoints: $pumpkinPoints)
+            }
+        )
     }
 }
 
