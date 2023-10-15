@@ -35,7 +35,7 @@ struct TitleView: View {
                 Image("Logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .scaleEffect(1.5)
+                    .scaleEffect(1.25)
                     .frame(maxWidth: .infinity)
                 Spacer()
                 
@@ -44,10 +44,10 @@ struct TitleView: View {
                         //TODO: レベル選択に移動する
                     }) {
                         RoundedRectangle(cornerRadius: 20)
-                            .fill(.black)
+                            .fill(Color("PrimaryColor"))
                             .frame(maxWidth: .infinity, minHeight: 30, alignment: .center)
                             .overlay(
-                                Text("TAP TO START")
+                                Text("🎃 TAP TO START 🎃")
                                     .font(.custom("Kiwi Maru", size: 30))
                                     .fontWeight(.black)
                                     .foregroundColor(.white)
