@@ -27,9 +27,10 @@ struct ScoreResultsView: View {
                     .foregroundColor(Color("FourthColor"))
                 Spacer()
                 ZStack {
-                    Image("OverworkCat_Pumpkin")
+                    Image("Scoreboard")
                         .resizable()
-                        .aspectRatio(contentMode: .fit) //TODO: 背景の変更
+                        .aspectRatio(contentMode: .fit)
+                        .scaleEffect(0.85)
                     Text("\(pumpkinPoints)")
                         .font(.custom("Kiwi Maru", size: 96))
                         .fontWeight(.medium)
