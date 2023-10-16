@@ -18,7 +18,7 @@ struct TitleView: View {
                     .ignoresSafeArea()
                 VStack {
                     HStack {
-                        // info Button
+
                         Button(action: {
                             
                         }) {
