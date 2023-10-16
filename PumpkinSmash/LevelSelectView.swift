@@ -55,12 +55,11 @@ struct LevelSelectView: View {
                                 Text("簡単 🤡") //TODO: ボタンの画像を作成
                                     .font(.custom("Kiwi Maru", size: 30))
                                     .fontWeight(.black)
+                                    .foregroundColor(.white) +
+                                Text("\n\n初心者向けにはおすすめよー 😃")
+                                    .font(.custom("Kiwi Maru", size: 16))
+                                    .fontWeight(.black)
                                     .foregroundColor(.white)
-    //                            Spacer()
-    //                            Text("初心者向けにはおすすめよー 😃")
-    //                                .font(.custom("Kiwi Maru", size: 16))
-    //                                .fontWeight(.black)
-    //                                .foregroundColor(.white)
                             )
                     }
 
@@ -78,6 +77,10 @@ struct LevelSelectView: View {
                                 Text("普通 🤨")
                                     .font(.custom("Kiwi Maru", size: 30))
                                     .fontWeight(.black)
+                                    .foregroundColor(.white) +
+                                Text("\n\n中級者向けにしっかりレベルアップ！ 🤩")
+                                    .font(.custom("Kiwi Maru", size: 16))
+                                    .fontWeight(.black)
                                     .foregroundColor(.white)
                             )
                     }.padding()
@@ -93,6 +96,10 @@ struct LevelSelectView: View {
                             .overlay(
                                 Text("難しい 🗿")
                                     .font(.custom("Kiwi Maru", size: 30))
+                                    .fontWeight(.black)
+                                    .foregroundColor(.white) +
+                                Text("\n\nえぇぇ、カボチャ愛好家ですねー 😳")
+                                    .font(.custom("Kiwi Maru", size: 16))
                                     .fontWeight(.black)
                                     .foregroundColor(.white)
                             )

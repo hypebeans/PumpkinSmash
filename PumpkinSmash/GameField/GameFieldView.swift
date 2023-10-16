@@ -76,9 +76,16 @@ struct GameFieldView: View {
                     
                     Spacer()
                     
-                    // タイマー
-                    Text("残り\(timerManager.secondsLeft)秒")
-                        .font((.custom("Kiwi Maru", size: 60)))
+                    ZStack {
+                        Image("Timeboard")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .offset(y: -10)
+                        // タイマー
+                        Text("残り\(timerManager.secondsLeft)秒")
+                            .font((.custom("Kiwi Maru", size: 48)))
+                            .foregroundStyle(.white)
+                    }
                     
                     Spacer()
                     
@@ -161,12 +168,11 @@ struct GameFieldView: View {
                             timerManager.start() // タイマーをスタート
                         }) {
                             ZStack {
-                                RoundedRectangle(cornerRadius: 25.0)
-                                    .frame(maxWidth: .infinity, maxHeight: 90)
-                                Text("Start")
-                                    .font(.title)
+                                Text("🎃 TAP TO START 🎃")
+                                    .font((.custom("Kiwi Maru", size: 30)))
                                     .fontWeight(.bold)
                                     .foregroundStyle(.white)
+                                    .offset(y: -35)
                             }
                             .padding()
                         }
