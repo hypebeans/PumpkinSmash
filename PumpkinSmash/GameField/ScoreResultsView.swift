@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ScoreResultsView: View {
     @Binding var pumpkinPoints: Int
+    // dismissボタン
     @Environment(\.dismiss) private var dismiss
+    @Binding var isNext: Bool
     var body: some View {
         ZStack {
             Color("PrimaryColor")
@@ -43,7 +45,8 @@ struct ScoreResultsView: View {
                     Spacer()
                     // メニューに戻るボタン
                     Button(action: {
-                        
+                        dismiss()
+                        isNext = false
                     }) {
                         RoundedRectangle(cornerRadius: 15)
                         // TODO: カスタム画像のボタン（今週も締め切り 🗿）
@@ -88,6 +91,6 @@ struct ScoreResultsView: View {
 
 struct ScoreResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreResultsView(pumpkinPoints: .constant(99))
+        ScoreResultsView(pumpkinPoints: .constant(99), isNext: .constant(true))
     }
 }

@@ -47,6 +47,8 @@ struct GameFieldView: View {
     // かぼちゃの点数
     @State var pumpkinPoints: Int = 0
     
+    @Binding var isNext: Bool
+    
     // タップサウンドを再生する
     let tapSound = try! AVAudioPlayer(data: NSDataAsset(name: "TapSound")!.data)
     func playSound() {
@@ -55,6 +57,8 @@ struct GameFieldView: View {
         tapSound.currentTime = 0
         tapSound.play()
     }
+    
+    
     
     var body: some View {
         ZStack {
@@ -116,6 +120,9 @@ struct GameFieldView: View {
                         ForEach ((0...24), id: \.self) { num in
                             if buttonPosition == num {
                                 Button(action: {
+                                    playSound() // タップ音を再生する
+                                    buttonPosition = showHole.shuffled()[0] // ボタンが表示される場所をランダムで選択する
+                                    buttonAnimation.height = 0 // アニメーション用に初期値に戻す
                                     // 押された画像の種類によって点数を振り分ける
                                     switch buttonImage {
                                     case "Normal_Pumpkin":
@@ -136,9 +143,6 @@ struct GameFieldView: View {
                                     default:
                                         pumpkinPoints = 0
                                     }
-                                    playSound() // タップ音を再生する
-                                    buttonPosition = showHole.shuffled()[0] // ボタンが表示される場所をランダムで選択する
-                                    buttonAnimation.height = 0 // アニメーション用に初期値に戻す
                                 }) {
                                     Image(buttonImage)
                                         .resizable()
@@ -166,6 +170,7 @@ struct GameFieldView: View {
                             isGameStarted = true // ゲームを開始しているか
                             buttonPosition = showHole.shuffled()[0] // ボタンの場所をシャッフルする
                             timerManager.start() // タイマーをスタート
+                            buttonAnimation.height = 0 // アニメーション用に初期値に戻す
                         }) {
                             ZStack {
                                 Text("🎃 TAP TO START 🎃")
@@ -207,7 +212,7 @@ struct GameFieldView: View {
                 timerManager.secondsLeft = setTime  // 残り時間をリセット
             },
             content: {
-                ScoreResultsView(pumpkinPoints: $pumpkinPoints)
+                ScoreResultsView(pumpkinPoints: $pumpkinPoints, isNext: $isNext)
             }
         )
     }
@@ -216,6 +221,6 @@ struct GameFieldView: View {
 // FIXME: (difficulty: 0)はデバッグ用です。数字を変更すると難易度が変化します
 struct GameGieldView_Previews: PreviewProvider {
     static var previews: some View {
-        GameFieldView(difficulty: 0)
+        GameFieldView(difficulty: 0, isNext: .constant(true))
     }
 }

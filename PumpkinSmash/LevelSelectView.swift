@@ -35,7 +35,7 @@ struct LevelSelectView: View {
                     
                     // ボタンが押された時に遷移する
                     NavigationLink(
-                        destination: GameFieldView(difficulty: self.difficulty)
+                        destination: GameFieldView(difficulty: self.difficulty, isNext: $isNext)
                             .navigationBarBackButtonHidden(),
                         isActive: $isNext){
                             // 空のView
