@@ -19,7 +19,6 @@ struct HowToPlayView: View {
 """
     
     var body: some View {
-
             ScrollView {
                 ZStack {
                     Color("PrimaryColor")
