@@ -9,12 +9,13 @@ import SwiftUI
 
 struct LevelSelectView: View {
     // 画面遷移を制御
-    @State var isNext = false
+    @State var isPresented = false
     // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
-    @State var difficulty = 0
+    // presentedで代入される
+    @State var difficulty: Int = 0
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color("SecondaryColor")
                     .ignoresSafeArea()
@@ -33,19 +34,9 @@ struct LevelSelectView: View {
                         .padding(.trailing, 5)
                     Spacer()
                     
-                    // ボタンが押された時に遷移する
-                    NavigationLink(
-                        destination: GameFieldView(difficulty: self.difficulty, isNext: $isNext)
-                            .navigationBarBackButtonHidden(),
-                        isActive: $isNext){
-                            // 空のView
-                            EmptyView()
-                        }
-                    
                     // 簡単
                     Button(action: {
-                        difficulty = 0
-                        isNext = true
+                        presented(num: 0)
                     }) {
                         RoundedRectangle(cornerRadius: 20)
                         // TODO: カスタム画像のボタン（今週も締め切り 🗿）
@@ -67,8 +58,7 @@ struct LevelSelectView: View {
                     
                     // 普通
                     Button(action: {
-                        difficulty = 1
-                        isNext = true
+                        presented(num: 1)
                     }) {
                         RoundedRectangle(cornerRadius: 20)
                             .fill(Color("TertiaryColor"))
@@ -87,8 +77,7 @@ struct LevelSelectView: View {
                     
                     // 難しい
                     Button(action: {
-                        difficulty = 2
-                        isNext = true
+                        presented(num: 2)
                     }) {
                         RoundedRectangle(cornerRadius: 20)
                             .fill(Color("TertiaryColor"))
@@ -106,8 +95,18 @@ struct LevelSelectView: View {
                     }
                     .padding()
                 }
+                .navigationDestination(isPresented: $isPresented) {
+                    GameFieldView(difficulty: self.difficulty, isPresented: $isPresented)
+                        .navigationBarBackButtonHidden()
+                }
             }
         }
+    }
+    
+    // 難易度を変数difficultyへ代入し画面遷移を行う関数
+    func presented(num: Int) {
+        difficulty = num
+        isPresented = true
     }
 }
 
