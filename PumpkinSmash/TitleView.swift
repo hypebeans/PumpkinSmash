@@ -20,7 +20,7 @@ struct TitleView: View {
                     HStack {
                         // 遊び方ボタン
                         Button(action: {
-                            
+//                            path.append()
                         }) {
                             Image(systemName: "info.circle.fill")
                                 .foregroundColor(Color("FourthColor"))
