@@ -12,6 +12,8 @@ struct TitleView: View {
     @State var path: [ViewPath] = []
     @State var showPlay = false
     @Environment(\.dismiss) var dismiss
+    // View間で難易度をやり取りするためのObservedObject
+    @ObservedObject var difficulty = Difficulty()
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -110,9 +112,11 @@ struct TitleView: View {
                                                 }.offset(x: -100)
                                             }
                                         }
+                            .environmentObject(difficulty)
                     case .GameFieldView:
                         GameFieldView(path: $path)
                             .navigationBarBackButtonHidden()
+                            .environmentObject(difficulty)
                         
                     }
                 }

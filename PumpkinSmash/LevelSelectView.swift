@@ -11,7 +11,8 @@ struct LevelSelectView: View {
     // 画面遷移を制御
     @Binding var path: [ViewPath]
     // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
-    @State var difficulty: Int = 0
+    @EnvironmentObject var difficulty: Difficulty
+    @Environment(\.presentationMode) var present
     
     var body: some View {
         ZStack {
@@ -51,7 +52,7 @@ struct LevelSelectView: View {
                                 .foregroundColor(.white)
                         )
                 }
-
+                
                 .padding()
                 
                 // 普通
@@ -74,6 +75,16 @@ struct LevelSelectView: View {
                 }
                 .navigationDestination(for: ViewPath.self) { value in
                     GameFieldView(path: $path)
+                        .navigationBarBackButtonHidden(true)
+//                        .navigationBarItems(leading:
+//                            Button(action: goBack) {
+//                                 HStack {
+//                                     Image("backButton")
+//                                     .resizable()
+//                                     .aspectRatio(contentMode: .fit)
+//                             }
+//                         }
+//                    )
                 }
                 .padding()
                 
@@ -102,16 +113,16 @@ struct LevelSelectView: View {
     
     // 難易度を変数difficultyへ代入し画面遷移を行う関数
     func presented(num: Int) {
-        difficulty = num
+        difficulty.num = num
         path.append(.GameFieldView)
     }
     
-    func returnDifficulty() -> Int{
-        return difficulty
-    }
+//    func goBack() {
+//        self.present.wrappedValue.dismiss()
+//    }
     
 }
-
+    
 struct LevelSelectView_Previews: PreviewProvider {
     static var previews: some View {
         LevelSelectView(path: .constant([.TitleView]))

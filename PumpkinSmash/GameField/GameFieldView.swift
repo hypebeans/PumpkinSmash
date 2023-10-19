@@ -17,6 +17,8 @@ struct GameFieldView: View {
     let tapSound = try! AVAudioPlayer(data: NSDataAsset(name: "TapSound")!.data)
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
+    // 難易度を選択。
+    @EnvironmentObject var difficulty: Difficulty
     // 制限時間を保持しておく変数
     @State var setTime: Int = 0
     // ランダムにかぼちゃの画像を選ぶ
@@ -168,11 +170,8 @@ struct GameFieldView: View {
         }
         // GameFieldViewが呼び出された時に残り時間を設定する
         .onAppear() {
-            // difficulty → 難易度 LevelSelectViewで選択
-            let difficulty = LevelSelectView(path: .constant([.GameFieldView])).returnDifficulty()
-            print("difficulty num is \(difficulty)")
             // 制限時間(setTime)、表示する穴の数(showHole)、画像の種類を変更する(pumpkinImage)
-            switch difficulty {
+            switch difficulty.num {
             case 0:
                 print("difficulty is 'Easy'")
                 setTime = 15
