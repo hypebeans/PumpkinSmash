@@ -10,6 +10,7 @@ import SwiftUI
 struct TitleView: View {
     // 画面遷移を制御
     @State var path: [ViewPath] = []
+    @State var showPlay = false
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -20,7 +21,7 @@ struct TitleView: View {
                     HStack {
                         // 遊び方ボタン
                         Button(action: {
-//                            path.append()
+                            showPlay = true
                         }) {
                             Image(systemName: "info.circle.fill")
                                 .foregroundColor(Color("FourthColor"))
@@ -34,7 +35,10 @@ struct TitleView: View {
                         
                     }
                     .padding()
-                    
+                    .sheet(isPresented: $showPlay) {
+                        HowToPlayView()
+                    }
+
                     // ロゴ
                     Image("Logo")
                         .resizable()

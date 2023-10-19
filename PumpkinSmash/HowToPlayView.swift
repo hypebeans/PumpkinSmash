@@ -61,6 +61,19 @@ struct HowToPlayView: View {
                             .foregroundStyle(.white)
                             .padding()
                         Spacer()
+                        HStack {
+                            Image("PlayMethod")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .scaleEffect(0.65)
+                            Image("Instruction")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .scaleEffect(1.15)
+                                .offset(x: -20)
+                                .frame(maxWidth: .infinity)
+                        }.padding()
+                        Spacer()
                         HStack(spacing: 0) {
                         Text("３つの難易度は")
                             .font(.custom("Kiwi Maru", size: 16))
@@ -323,24 +336,18 @@ struct HowToPlayView: View {
                             Text("難しい")
                                     .font(.custom("Kiwi Maru", size: 24))
                                     .foregroundStyle(Color("FourthColor"))
-                        }
-                        
-                        
-                        HStack {
-                            Image("PlayMethod")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .scaleEffect(0.75)
-                            Image("Instruction")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
                         }.padding()
+                        
                     }
                 }
             }
 //            .navigationViewStyle(StackNavigationViewStyle())
-            
             .ignoresSafeArea()
+//            .presentationDetents([
+//                .large
+//              ])
+//            .presentationBackgroundInteraction(.enabled(upThrough: .height(.infinity)))
+
             
             
 
