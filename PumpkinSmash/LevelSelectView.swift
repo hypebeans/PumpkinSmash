@@ -12,7 +12,6 @@ struct LevelSelectView: View {
     @Binding var path: [ViewPath]
     // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
     @State var difficulty: Int = 0
-    @Environment(\.presentationMode) var present
     
     var body: some View {
         ZStack {
@@ -75,17 +74,7 @@ struct LevelSelectView: View {
                 }
                 .navigationDestination(for: ViewPath.self) { value in
                     GameFieldView(path: $path)
-//                        .navigationBarBackButtonHidden(true)
-//                        .navigationBarItems(leading:
-//                            Button(action: goBack) {
-//                                 HStack {
-//                                     Image("backButton")
-//                                     .resizable()
-//                                     .aspectRatio(contentMode: .fit)
-//                             }
-//                         }
-//                    )
-                    
+                }
                 .padding()
                 
                 // 難しい
@@ -121,9 +110,6 @@ struct LevelSelectView: View {
         return difficulty
     }
     
-//    func goBack() {
-//        self.present.wrappedValue.dismiss()
-//    }
 }
 
 struct LevelSelectView_Previews: PreviewProvider {

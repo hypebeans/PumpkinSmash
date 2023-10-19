@@ -11,6 +11,7 @@ struct TitleView: View {
     // 画面遷移を制御
     @State var path: [ViewPath] = []
     @State var showPlay = false
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -86,6 +87,29 @@ struct TitleView: View {
                     case .LevelSelectView:
                         LevelSelectView(path: $path)
                             .navigationBarBackButtonHidden()
+//                            .navigationBarItems(leading:
+//                                                    Button(action: ) {
+//                                      HStack {
+//                                                             Image("backButton")
+//                                                             .resizable()
+//                                                             .aspectRatio(contentMode: .fit)
+//                                                     }
+//                                                 }
+//                                            )
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                                Button {
+                                                    path.removeAll()
+                                                } label: {
+                                                    HStack(spacing: 0) {
+                                                        Image("backButton")
+                                                            .resizable()
+                                                            .aspectRatio(contentMode: .fit)
+                                                            .scaleEffect(0.75)
+                                                    }
+                                                }.offset(x: -100)
+                                            }
+                                        }
                     case .GameFieldView:
                         GameFieldView(path: $path)
                             .navigationBarBackButtonHidden()
@@ -96,6 +120,7 @@ struct TitleView: View {
         }
     }
 }
+
 
 struct TitleView_Previews: PreviewProvider {
     static var previews: some View {
