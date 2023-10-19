@@ -71,6 +71,15 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		1DB113D02AE0C0BA007A1691 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				6B7535552AD8E4B3000EFF1A /* TitleView.swift */,
+				6BCCB09D2ADD14E000511BAA /* HowToPlayView.swift */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
 		1DBC8C9A2AD8D11300E75C59 /* GameField */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,17 +128,16 @@
 		6B069CE82ACD60490027B308 /* PumpkinSmash */ = {
 			isa = PBXGroup;
 			children = (
+				6B069CED2ACD604C0027B308 /* Assets.xcassets */,
 				6B7907272AD635C300AB8C49 /* Info.plist */,
 				1D8056C12AD7A85800C306BD /* fonts */,
 				6B069CE92ACD60490027B308 /* PumpkinSmashApp.swift */,
 				6B75354D2AD8DD2F000EFF1A /* LaunchScreenView.swift */,
 				6B069CEB2ACD60490027B308 /* ContentView.swift */,
-				6B7535552AD8E4B3000EFF1A /* TitleView.swift */,
-				1DB25E102AE0B2AD00747606 /* ViewPath.swift */,
-				6BCCB09D2ADD14E000511BAA /* HowToPlayView.swift */,
+				1DB113D02AE0C0BA007A1691 /* Title */,
 				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
+				1DB25E102AE0B2AD00747606 /* ViewPath.swift */,
 				1DBC8C9A2AD8D11300E75C59 /* GameField */,
-				6B069CED2ACD604C0027B308 /* Assets.xcassets */,
 				6B069CEF2ACD604C0027B308 /* Preview Content */,
 			);
 			path = PumpkinSmash;

@@ -9,14 +9,12 @@ import SwiftUI
 import AVFoundation
 
 struct GameFieldView: View {
+    // path → 画面遷移を制御するフラグ
+    @Binding var path: [ViewPath]
     // グリッドの設定
     let grids = Array(repeating: GridItem(.fixed(UIScreen.main.bounds.width / 5 - 10)), count: 5)
-    // difficulty → 難易度 LevelSelectViewで選択
-    let difficulty: Int
     // タップサウンドを再生する
     let tapSound = try! AVAudioPlayer(data: NSDataAsset(name: "TapSound")!.data)
-    // isPresented → 画面遷移を制御するフラグ
-    // @Binding var isPresented: Bool
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
     // 制限時間を保持しておく変数
@@ -170,6 +168,9 @@ struct GameFieldView: View {
         }
         // GameFieldViewが呼び出された時に残り時間を設定する
         .onAppear() {
+            // difficulty → 難易度 LevelSelectViewで選択
+            let difficulty = LevelSelectView(path: .constant([.GameFieldView])).returnDifficulty()
+            print("difficulty num is \(difficulty)")
             // 制限時間(setTime)、表示する穴の数(showHole)、画像の種類を変更する(pumpkinImage)
             switch difficulty {
             case 0:
@@ -218,6 +219,6 @@ struct GameFieldView: View {
 // FIXME: (difficulty: 0, isPresented: .constant(true))はデバッグ用です。difficultyの数字を変更すると難易度が変化します
 struct GameGieldView_Previews: PreviewProvider {
     static var previews: some View {
-        GameFieldView(difficulty: 0)
+        GameFieldView(path: .constant([.GameFieldView]))
     }
 }
