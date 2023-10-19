@@ -145,7 +145,12 @@ struct GameFieldView: View {
                         Button(action: {
                             isGameStarted = true // ゲームを開始しているか
                             isPauseShow = true // ポーズボタンの表示
-                            buttonPosition = showHole.shuffled()[0] // ボタンの場所をシャッフルする
+                            // ボタンが表示される場所をランダムで選択する(重複なし)
+                            var positionTmp = 0
+                            positionTmp = buttonPosition
+                            repeat {
+                                buttonPosition = showHole.shuffled()[0]
+                            } while positionTmp == buttonPosition
                             timerManager.start() // タイマーをスタート
                             buttonAnimation.height = 0 // アニメーション用に初期値に戻す
                         }) {
