@@ -89,15 +89,7 @@ struct TitleView: View {
                     case .LevelSelectView:
                         LevelSelectView(path: $path)
                             .navigationBarBackButtonHidden()
-//                            .navigationBarItems(leading:
-//                                                    Button(action: ) {
-//                                      HStack {
-//                                                             Image("backButton")
-//                                                             .resizable()
-//                                                             .aspectRatio(contentMode: .fit)
-//                                                     }
-//                                                 }
-//                                            )
+                            .environmentObject(difficulty)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarLeading) {
                                                 Button {
@@ -112,7 +104,6 @@ struct TitleView: View {
                                                 }.offset(x: -100)
                                             }
                                         }
-                            .environmentObject(difficulty)
                     case .GameFieldView:
                         GameFieldView(path: $path)
                             .navigationBarBackButtonHidden()

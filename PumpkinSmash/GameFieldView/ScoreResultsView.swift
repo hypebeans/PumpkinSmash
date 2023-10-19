@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ScoreResultsView: View {
-    @Binding var pumpkinPoints: Int
-    
+    let pumpkinPoints: Int
+    @Binding var path: [ViewPath]
     // dismissボタン
     @Environment(\.dismiss) private var dismiss
     
@@ -47,7 +47,7 @@ struct ScoreResultsView: View {
                     Spacer()
                     // メニューに戻るボタン
                     Button(action: {
-                        
+                        path.removeLast()
                     }) {
                         RoundedRectangle(cornerRadius: 15)
                         // TODO: カスタム画像のボタン（今週も締め切り 🗿）
@@ -92,6 +92,6 @@ struct ScoreResultsView: View {
 
 struct ScoreResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreResultsView(pumpkinPoints: .constant(99))
+        ScoreResultsView(pumpkinPoints: 99, path: .constant([.GameFieldView]))
     }
 }

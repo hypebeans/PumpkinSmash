@@ -19,6 +19,7 @@ struct GameFieldView: View {
     @StateObject var timerManager = TimerManager()
     // 難易度を選択。
     @EnvironmentObject var difficulty: Difficulty
+//    @ObservedObject var difficulty = Difficulty()
     // 制限時間を保持しておく変数
     @State var setTime: Int = 0
     // ランダムにかぼちゃの画像を選ぶ
@@ -182,13 +183,11 @@ struct GameFieldView: View {
                 setTime = 10
                 showHole = [2, 6, 7, 8, 10, 11, 12, 13, 14, 16, 17, 18, 22]
                 pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
-                
             case 2:
                 print("difficulty is 'Hard'")
                 setTime = 5
                 showHole = Array(0...24)
                 pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin", "Bomb_Pumpkin", "OverworkCat_Pumpkin"]
-                
             default:
                 setTime = 1
                 showHole = []
@@ -208,7 +207,7 @@ struct GameFieldView: View {
                 print("onDismiss pumpkinPoints: \(pumpkinPoints)")
             },
             content: {
-                ScoreResultsView(pumpkinPoints: $pumpkinPoints)
+                ScoreResultsView(pumpkinPoints: self.pumpkinPoints, path: $path)
                     .navigationBarBackButtonHidden()
             }
         )
@@ -216,8 +215,8 @@ struct GameFieldView: View {
 }
 
 // FIXME: (difficulty: 0, isPresented: .constant(true))はデバッグ用です。difficultyの数字を変更すると難易度が変化します
-struct GameGieldView_Previews: PreviewProvider {
+struct GameFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        GameFieldView(path: .constant([.GameFieldView]))
+        GameFieldView(path: .constant([]))
     }
 }
