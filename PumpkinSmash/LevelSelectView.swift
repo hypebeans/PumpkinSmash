@@ -76,15 +76,6 @@ struct LevelSelectView: View {
                 .navigationDestination(for: ViewPath.self) { value in
                     GameFieldView(path: $path)
                         .navigationBarBackButtonHidden(true)
-//                        .navigationBarItems(leading:
-//                            Button(action: goBack) {
-//                                 HStack {
-//                                     Image("backButton")
-//                                     .resizable()
-//                                     .aspectRatio(contentMode: .fit)
-//                             }
-//                         }
-//                    )
                 }
                 .padding()
                 

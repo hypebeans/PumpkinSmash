@@ -70,7 +70,7 @@ struct GameFieldView: View {
                         Text("残り\(timerManager.secondsLeft)秒")
                             .font((.custom("Kiwi Maru", size: 48)))
                             .foregroundStyle(.white)
-                    }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    }.frame(maxWidth: .infinity)
                     
                     if isPauseShow {
                         // ポーズボタン
@@ -106,37 +106,27 @@ struct GameFieldView: View {
                         ForEach ((0...24), id: \.self) { num in
                             if buttonPosition == num {
                                 Button(action: {
-                                    playSound() // タップ音を再生する
-                                    buttonPosition = showHole.shuffled()[0] // ボタンが表示される場所をランダムで選択する
-                                    buttonAnimation.height = 0 // アニメーション用に初期値に戻す
+                                    // タップ音を再生する
+                                    playSound()
+                                    // ボタンが表示される場所をランダムで選択する(重複なし)
+                                    var positionTmp = 0
+                                    positionTmp = buttonPosition
+                                    repeat {
+                                        buttonPosition = showHole.shuffled()[0]
+                                    } while positionTmp == buttonPosition
+                                    // アニメーション用に初期値に戻す
+                                    buttonAnimation.height = 0
                                     // 押された画像の種類によって点数を振り分ける
-                                    switch randomSelectPumpkinImage {
-                                    case "Normal_Pumpkin":
-                                        pumpkinPoints += 1
-                                        print("Normal_Pumpkin. point: \(pumpkinPoints)")
-                                    case "Gold_Pumpkin":
-                                        pumpkinPoints += 5
-                                        print("Gold_Pumpkin. point: \(pumpkinPoints)")
-                                    case "Ookawa_Pumpkin":
-                                        pumpkinPoints += 10
-                                        print("Ookawa_Pumpkin. point: \(pumpkinPoints)")
-                                    case "Bomb_Pumpkin":
-                                        pumpkinPoints -= 10
-                                        print("Bomb_Pumpkin. point: \(pumpkinPoints)")
-                                    case "OverworkCat_Pumpkin":
-                                        pumpkinPoints -= 20
-                                        print("OverworkCat_Pumpkin. point: \(pumpkinPoints)")
-                                    default:
-                                        pumpkinPoints = 0
-                                    }
+                                    dividePoint(imageName: randomSelectPumpkinImage)
                                 }) {
                                     Image(randomSelectPumpkinImage)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .offset(buttonAnimation)
                                         .onAppear() {
-                                            // かぼちゃの種類をランダムに選択する
+                                            // かぼちゃの画像をランダムに選択する
                                             randomSelectPumpkinImage = pumpkinImages.shuffled()[0]
+                                            
                                             // かぼちゃの登場アニメーション
                                             withAnimation(.spring){
                                                 buttonAnimation.height = -30
@@ -215,6 +205,29 @@ struct GameFieldView: View {
                     .navigationBarBackButtonHidden()
             }
         )
+    }
+    
+    // 画像によって点数を振り分ける
+    func dividePoint(imageName: String) {
+        switch imageName {
+        case "Normal_Pumpkin":
+            pumpkinPoints += 1
+            // print("Normal_Pumpkin. point: \(pumpkinPoints)")
+        case "Gold_Pumpkin":
+            pumpkinPoints += 5
+            // print("Gold_Pumpkin. point: \(pumpkinPoints)")
+        case "Ookawa_Pumpkin":
+            pumpkinPoints += 10
+            // print("Ookawa_Pumpkin. point: \(pumpkinPoints)")
+        case "Bomb_Pumpkin":
+            pumpkinPoints -= 10
+            // print("Bomb_Pumpkin. point: \(pumpkinPoints)")
+        case "OverworkCat_Pumpkin":
+            pumpkinPoints -= 20
+            // print("OverworkCat_Pumpkin. point: \(pumpkinPoints)")
+        default:
+            pumpkinPoints = 0
+        }
     }
 }
 
