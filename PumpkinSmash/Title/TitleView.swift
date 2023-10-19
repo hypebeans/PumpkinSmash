@@ -46,7 +46,7 @@ struct TitleView: View {
                     VStack {
                         // TAP TO START
                         Button(action: {
-                            path.append(.TitleView)
+                            path.append(.LevelSelectView)
                         }) {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color("PrimaryColor"))
@@ -75,8 +75,18 @@ struct TitleView: View {
                     
                 }
                 // ボタンが押された時にレベル選択に遷移する
-                .navigationDestination(for: ViewPath.self) { _ in
-                    LevelSelectView(path: $path)
+                .navigationDestination(for: ViewPath.self) { value in
+                    switch value {
+                    case .TitleView:
+                        TitleView()
+                    case .LevelSelectView:
+                        LevelSelectView(path: $path)
+                            .navigationBarBackButtonHidden()
+                    case .GameFieldView:
+                        GameFieldView(path: $path)
+                            .navigationBarBackButtonHidden()
+                        
+                    }
                 }
             }
         }
