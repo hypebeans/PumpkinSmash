@@ -7,8 +7,6 @@
 
 import Foundation
 
-enum Difficulty {
-    case easy
-    case normal
-    case hard
+class Difficulty: ObservableObject {
+    @Published var difficulty = 0
 }
