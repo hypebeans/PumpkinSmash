@@ -9,16 +9,16 @@ import SwiftUI
 
 struct TitleView: View {
     // 画面遷移を制御
-    @State var isNext = false
+    @State var path: [ViewPath] = []
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             ZStack {
                 Color("PrimaryColor")
                     .ignoresSafeArea()
                 VStack {
                     HStack {
-
+                        // 遊び方ボタン
                         Button(action: {
                             
                         }) {
@@ -43,18 +43,10 @@ struct TitleView: View {
                         .frame(maxWidth: .infinity)
                     Spacer()
                     
-                    // ボタンが押された時にレベル選択に遷移する
-                    // FIXME: あとで修正!!!
-                    NavigationLink(
-                        destination: LevelSelectView()
-                            .navigationBarBackButtonHidden(),
-                        isActive: $isNext){
-                            // 空のView
-                            EmptyView()
-                        }
                     VStack {
+                        // TAP TO START
                         Button(action: {
-                            isNext = true
+                            path.append(.TitleView)
                         }) {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color("PrimaryColor"))
@@ -82,9 +74,13 @@ struct TitleView: View {
                     }
                     
                 }
+                // ボタンが押された時にレベル選択に遷移する
+                .navigationDestination(for: ViewPath.self) { _ in
+                    LevelSelectView(path: $path)
+                }
             }
         }
-        }
+    }
 }
 
 struct TitleView_Previews: PreviewProvider {

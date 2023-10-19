@@ -16,7 +16,7 @@ struct GameFieldView: View {
     // タップサウンドを再生する
     let tapSound = try! AVAudioPlayer(data: NSDataAsset(name: "TapSound")!.data)
     // isPresented → 画面遷移を制御するフラグ
-    @Binding var isPresented: Bool
+    // @Binding var isPresented: Bool
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
     // 制限時間を保持しておく変数
@@ -205,9 +205,10 @@ struct GameFieldView: View {
                 buttonPosition = 0                  // ボタンの場所をリセット
                 pumpkinPoints = 0                   // 得点をリセット
                 timerManager.secondsLeft = setTime  // 残り時間をリセット
+                print("onDismiss pumpkinPoints: \(pumpkinPoints)")
             },
             content: {
-                ScoreResultsView(pumpkinPoints: $pumpkinPoints, isPresented: $isPresented)
+                ScoreResultsView(pumpkinPoints: $pumpkinPoints)
                     .navigationBarBackButtonHidden()
             }
         )
@@ -217,6 +218,6 @@ struct GameFieldView: View {
 // FIXME: (difficulty: 0, isPresented: .constant(true))はデバッグ用です。difficultyの数字を変更すると難易度が変化します
 struct GameGieldView_Previews: PreviewProvider {
     static var previews: some View {
-        GameFieldView(difficulty: 0, isPresented: .constant(true))
+        GameFieldView(difficulty: 0)
     }
 }

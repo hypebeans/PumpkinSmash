@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DB25E112AE0B2AD00747606 /* ViewPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB25E102AE0B2AD00747606 /* ViewPath.swift */; };
 		1DBC8C9D2AD8D50A00E75C59 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC8C9C2AD8D50A00E75C59 /* TimerManager.swift */; };
 		1DBC8C9F2AD8D51700E75C59 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC8C9E2AD8D51700E75C59 /* Helper.swift */; };
 		1DBC8CB42AD8FB9700E75C59 /* KiwiMaru-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DBC8CB12AD8FB9600E75C59 /* KiwiMaru-Medium.ttf */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DB25E102AE0B2AD00747606 /* ViewPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPath.swift; sourceTree = "<group>"; };
 		1DBC8C9C2AD8D50A00E75C59 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		1DBC8C9E2AD8D51700E75C59 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		1DBC8CB12AD8FB9600E75C59 /* KiwiMaru-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Medium.ttf"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				6B75354D2AD8DD2F000EFF1A /* LaunchScreenView.swift */,
 				6B069CEB2ACD60490027B308 /* ContentView.swift */,
 				6B7535552AD8E4B3000EFF1A /* TitleView.swift */,
+				1DB25E102AE0B2AD00747606 /* ViewPath.swift */,
 				6BCCB09D2ADD14E000511BAA /* HowToPlayView.swift */,
 				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
 				1DBC8C9A2AD8D11300E75C59 /* GameField */,
@@ -223,6 +226,7 @@
 				1DFA46AA2ACEB0A700781FF4 /* GameFieldView.swift in Sources */,
 				1DBC8C9F2AD8D51700E75C59 /* Helper.swift in Sources */,
 				1DBC8CBC2ADA72B000E75C59 /* DummyHole.swift in Sources */,
+				1DB25E112AE0B2AD00747606 /* ViewPath.swift in Sources */,
 				6BCCB09E2ADD14E000511BAA /* HowToPlayView.swift in Sources */,
 				6B75354E2AD8DD2F000EFF1A /* LaunchScreenView.swift in Sources */,
 			);

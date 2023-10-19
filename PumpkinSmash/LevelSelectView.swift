@@ -9,13 +9,13 @@ import SwiftUI
 
 struct LevelSelectView: View {
     // 画面遷移を制御
-    @State var isPresented = false
+    @Binding var path: [ViewPath]
     // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
     // presentedで代入される
     @State var difficulty: Int = 0
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ZStack {
                 Color("SecondaryColor")
                     .ignoresSafeArea()
@@ -73,7 +73,8 @@ struct LevelSelectView: View {
                                     .fontWeight(.black)
                                     .foregroundColor(.white)
                             )
-                    }.padding()
+                    }
+                    .padding()
                     
                     // 難しい
                     Button(action: {
@@ -95,9 +96,8 @@ struct LevelSelectView: View {
                     }
                     .padding()
                 }
-                .navigationDestination(isPresented: $isPresented) {
-                    GameFieldView(difficulty: self.difficulty, isPresented: $isPresented)
-                        .navigationBarBackButtonHidden()
+                .navigationDestination(for: ViewPath.self) { value in
+                    GameFieldView(difficulty: difficulty)
                 }
             }
         }
@@ -106,12 +106,12 @@ struct LevelSelectView: View {
     // 難易度を変数difficultyへ代入し画面遷移を行う関数
     func presented(num: Int) {
         difficulty = num
-        isPresented = true
+        path.append(.LevelSelectView)
     }
 }
 
 struct LevelSelectView_Previews: PreviewProvider {
     static var previews: some View {
-        LevelSelectView()
+        LevelSelectView(path: .constant([.TitleView]))
     }
 }
