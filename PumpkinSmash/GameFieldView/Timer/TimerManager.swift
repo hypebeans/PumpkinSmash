@@ -11,7 +11,7 @@ import SwiftUI
 class TimerManager: ObservableObject {
     @Published var timerMode: TimerMode = .initial
     @Published var secondsLeft = 10
-    @Published var isTimerStoped = false
+    @Published var isTimerStopped = false
     var timer = Timer()
     
     func start() {
@@ -22,7 +22,7 @@ class TimerManager: ObservableObject {
             if self.secondsLeft == 0 {
                 self.timerMode = .initial
                 self.secondsLeft = 0
-                self.isTimerStoped = true
+                self.isTimerStopped = true
                 timer.invalidate()
             }
         })

@@ -18,8 +18,8 @@ struct GameFieldView: View {
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
     // 難易度を選択。
-    @EnvironmentObject var difficulty: Difficulty
-//    @ObservedObject var difficulty = Difficulty()
+//    @EnvironmentObject var difficulty: Difficulty
+    @ObservedObject var difficulty = Difficulty()
     // 制限時間を保持しておく変数
     @State var setTime: Int = 0
     // ランダムにかぼちゃの画像を選ぶ
@@ -32,6 +32,10 @@ struct GameFieldView: View {
     @State var buttonPosition = 0
     // ゲームスタートのフラグ
     @State var isGameStarted = false
+    //アラート表示のフラグ
+    @State var isAlertShow = false
+    // ポーズボタン表示のフラグ
+    @State var isPauseShow = false
     // かぼちゃ画像のアニメーション
     @State var buttonAnimation: CGSize = CGSize(width: 0, height: 0)
     // かぼちゃの点数
@@ -61,23 +65,24 @@ struct GameFieldView: View {
                         Image("Timeboard")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .offset(y: -10)
+                            .offset(y: isPauseShow ? -10 : -15)
                         // タイマー
                         Text("残り\(timerManager.secondsLeft)秒")
                             .font((.custom("Kiwi Maru", size: 48)))
                             .foregroundStyle(.white)
                     }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                     
-                    Spacer()
-                    
-                    // TODO: ポーズボタンを作成しよう🙀
-                    Button(action: {
-                        
-                    }) {
-                        Image("pauseButton")
-                            .scaleEffect(0.25)
-                    }
-                    .frame(width: 50, height: 50)
+                    if isPauseShow {
+                        // ポーズボタン
+                        Spacer()
+                        Button(action: {
+                            isAlertShow = true
+                        }) {
+                            Image("pauseButton")
+                                .scaleEffect(0.25)
+                        }
+                        .frame(width: 50, height: 50)
+                    } //アニメ
                 }
                 .padding()
                 
@@ -149,6 +154,7 @@ struct GameFieldView: View {
                     if !isGameStarted {
                         Button(action: {
                             isGameStarted = true // ゲームを開始しているか
+                            isPauseShow = true // ポーズボタンの表示
                             buttonPosition = showHole.shuffled()[0] // ボタンの場所をシャッフルする
                             timerManager.start() // タイマーをスタート
                             buttonAnimation.height = 0 // アニメーション用に初期値に戻す
@@ -195,7 +201,7 @@ struct GameFieldView: View {
             
         }
         .fullScreenCover(
-            isPresented: $timerManager.isTimerStoped,
+            isPresented: $timerManager.isTimerStopped,
             onDismiss: {
                 // ゲームを初期状態に戻す
                 isGameStarted = false               // ゲーム開始フラグをリセット
