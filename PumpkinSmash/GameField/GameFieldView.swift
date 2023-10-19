@@ -18,7 +18,8 @@ struct GameFieldView: View {
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
     // 難易度を選択。
-    @EnvironmentObject var difficulty: Difficulty
+//    @EnvironmentObject var difficulty: Difficulty 💀
+    @ObservedObject var difficulty = Difficulty()
     // 制限時間を保持しておく変数
     @State var setTime: Int = 0
     // ランダムにかぼちゃの画像を選ぶ
@@ -56,12 +57,6 @@ struct GameFieldView: View {
             VStack {
                 // メニューバー
                 HStack {
-                    // メニューボタン(ダミーです)
-                    Image(systemName: "slider.horizontal.3")
-                        .opacity(0.0)
-                    
-                    Spacer()
-                    
                     ZStack {
                         Image("Timeboard")
                             .resizable()
@@ -71,14 +66,18 @@ struct GameFieldView: View {
                         Text("残り\(timerManager.secondsLeft)秒")
                             .font((.custom("Kiwi Maru", size: 48)))
                             .foregroundStyle(.white)
-                    }
+                    }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                     
                     Spacer()
                     
                     // TODO: ポーズボタンを作成しよう🙀
-                    Button(action: {}) {
-                        Image(systemName: "pause.fill")
+                    Button(action: {
+                        
+                    }) {
+                        Image("pauseButton")
+                            .scaleEffect(0.25)
                     }
+                    .frame(width: 50, height: 50)
                 }
                 .padding()
                 
@@ -216,7 +215,7 @@ struct GameFieldView: View {
 }
 
 // FIXME: (difficulty: 0, isPresented: .constant(true))はデバッグ用です。difficultyの数字を変更すると難易度が変化します
-struct GameGieldView_Previews: PreviewProvider {
+struct GameFieldView_Previews: PreviewProvider {
     static var previews: some View {
         GameFieldView(path: .constant([.GameFieldView]))
     }
