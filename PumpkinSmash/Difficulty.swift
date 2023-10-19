@@ -8,5 +8,5 @@
 import Foundation
 
 class Difficulty: ObservableObject {
-    @Published var difficulty = 0
+    @Published var num = 0
 }

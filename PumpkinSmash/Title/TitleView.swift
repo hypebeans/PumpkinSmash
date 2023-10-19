@@ -11,6 +11,8 @@ struct TitleView: View {
     // 画面遷移を制御
     @State var path: [ViewPath] = []
     @State var showPlay = false
+    // View間で難易度をやり取りするためのObservedObject
+    @ObservedObject var difficulty = Difficulty()
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -86,9 +88,11 @@ struct TitleView: View {
                     case .LevelSelectView:
                         LevelSelectView(path: $path)
                             .navigationBarBackButtonHidden()
+                            .environmentObject(difficulty)
                     case .GameFieldView:
                         GameFieldView(path: $path)
                             .navigationBarBackButtonHidden()
+                            .environmentObject(difficulty)
                         
                     }
                 }
