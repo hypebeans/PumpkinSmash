@@ -34,7 +34,8 @@ struct HowToPlayView: View {
 25個の穴が表示されます。
 時間制限は5秒で5種類の
 かぼちゃが登場します。
-危険なかぼちゃがあるので注意してください！
+危険なかぼちゃがあるので
+注意してください！
 """
     
     
@@ -143,13 +144,12 @@ struct HowToPlayView: View {
                             Image("hardTitle")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .scaleEffect(0.9)
-                                .offset(x: 8.5)
+                                .offset(x: 10)
                                 .frame(maxWidth: .infinity)
                             Text(hardDesc)
                                 .font(.custom("Kiwi Maru", size: 12))
                                 .fontWeight(.bold)
-                                .padding(.leading, 25.5)
+                                .padding(.leading, 35)
                         }
                         .padding()
                         Text("")
