@@ -34,6 +34,8 @@ struct GameFieldView: View {
     @State var isGameStarted = false
     //アラート表示のフラグ
     @State var isAlertShow = false
+    @State var alertScale = 0.0
+    @State var alertOpacity = 0.0
     // ポーズボタン表示のフラグ
     @State var isPauseShow = false
     // かぼちゃ画像のアニメーション
@@ -75,19 +77,23 @@ struct GameFieldView: View {
                     if isPauseShow {
                         // ポーズボタン
                         Spacer()
-                        Button(action: {
-                            isAlertShow = true
+                        Button(
+                            action: {
+                                isAlertShow.toggle()
                         }) {
                             Image("pauseButton")
                                 .scaleEffect(0.25)
                         }
                         .frame(width: 50, height: 50)
+                        .disabled(isAlertShow ? true : false)
+                        
+                        
                     } //アニメ
                 }
                 .padding()
                 
                 Spacer()
-                
+                            
                 // ゲーム画面
                 ZStack {
                     // ゲーム画面(穴の表示)
@@ -139,6 +145,7 @@ struct GameFieldView: View {
                             }
                         }
                     }
+                    .disabled(isAlertShow ? true : false)
                     
                     // TODO: ボタンデザインを変更しよう
                     if !isGameStarted {
@@ -165,7 +172,24 @@ struct GameFieldView: View {
                         }
                     }
                 }
-                .padding(.bottom, 30)
+                
+            }
+            .background(isAlertShow ? Color(.black) : Color(.clear))
+            .opacity(isAlertShow ? 0.6 : 1)
+            
+            if isAlertShow {
+                ZStack {
+                    CustomAlert(path: $path)
+                }.scaleEffect(alertScale)
+                    .opacity(alertOpacity)
+                // ポーズボタンを表示する、アニメを実施する
+                .onAppear() {
+                    timerManager.pause()
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        alertScale = 1.0
+                        alertOpacity = 1.0
+                    }
+                }
             }
         }
         // GameFieldViewが呼び出された時に残り時間を設定する
