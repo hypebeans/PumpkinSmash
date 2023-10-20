@@ -26,7 +26,7 @@ struct LevelSelectView: View {
                     .foregroundColor(Color("TertiaryColor"))
                     .padding()
                 Spacer()
-                Text("自分の程度に挑戦しよう！ 💪")
+                Text("自分の限界に挑戦しよう！ 💪")
                     .font(.custom("Kiwi Maru", size: 16))
                     .fontWeight(.bold)
                     .foregroundColor(Color("TertiaryColor"))
@@ -46,13 +46,12 @@ struct LevelSelectView: View {
                                 .font(.custom("Kiwi Maru", size: 30))
                                 .fontWeight(.black)
                                 .foregroundColor(.white) +
-                            Text("\n\n初心者向けにはおすすめよー 😃")
+                            Text("\n\n初心者におすすめだよー 😃")
                                 .font(.custom("Kiwi Maru", size: 16))
                                 .fontWeight(.black)
                                 .foregroundColor(.white)
                         )
                 }
-                
                 .padding()
                 
                 // 普通
@@ -67,7 +66,7 @@ struct LevelSelectView: View {
                                 .font(.custom("Kiwi Maru", size: 30))
                                 .fontWeight(.black)
                                 .foregroundColor(.white) +
-                            Text("\n\n中級者向けにしっかりレベルアップ！ 🤩")
+                            Text("\n\n中級者向け！レベルアップ🤩")
                                 .font(.custom("Kiwi Maru", size: 16))
                                 .fontWeight(.black)
                                 .foregroundColor(.white)

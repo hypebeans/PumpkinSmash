@@ -11,24 +11,30 @@ struct HowToPlayView: View {
     
     let longIntro =
 """
-まず、私たちのゲームを試してくれてありがとうございます！ 「Pumpkin Smash」又はカボチャスマッシュはハロウィンテーマミニゲーム。
+私たちのゲームをプレイしていただきありがとうございます！ 
 
-たった1ゴールだけでカボチャをスマッシュして自分の力で最高のスコアに到達する。
-
-このゲームは3つの難易度と5種類のカボチャに分かれています。
+「Pumpkin Smash」はハロウィンをテーマにしたミニゲームです。飛び出すカボチャをタップして最高スコアを到達しよう！
 """
     
     let easyDesc =
     """
-簡単の詳細は９穴があります。そして、時間制限は15秒になります。かぼちゃの種類合計は3個になります。
+9つの穴が表示されます。
+時間制限は15秒で3種類の
+かぼちゃが登場します。
 """
+    
     let mediumDesc =
     """
-簡単の詳細は13穴があります。そして、時間制限は10秒になります。かぼちゃの種類合計も3個になります。
+13個の穴が表示されます。
+時間制限は10秒で3種類の
+かぼちゃが登場します。
 """
     let hardDesc =
     """
-簡単の詳細は25穴があります。そして、時間制限は5秒になります。かぼちゃの種類合計は5個になります。危険なかぼちゃがあるので、ご注意ください
+25個の穴が表示されます。
+時間制限は5秒で5種類の
+かぼちゃが登場します。
+危険なかぼちゃがあるので注意してください！
 """
     
     
@@ -132,8 +138,8 @@ struct HowToPlayView: View {
                             Image("hardTitle")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .scaleEffect(0.85)
-                                .offset(x: -5)
+                                .scaleEffect(0.9)
+                                .offset(x: -15)
                                 .frame(maxWidth: .infinity)
                             Text(hardDesc)
                                 .font(.custom("Kiwi Maru", size: 12))
@@ -160,7 +166,7 @@ struct HowToPlayView: View {
                                 .font(.custom("Kiwi Maru", size: 24))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                                .frame(maxWidth: .infinity)
                                 
                         }
                         .offset(y: 20)
