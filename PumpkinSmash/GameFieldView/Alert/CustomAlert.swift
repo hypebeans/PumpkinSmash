@@ -11,6 +11,11 @@ struct CustomAlert: View {
     
     @Binding var path: [ViewPath]
     @Environment(\.dismiss) private var dismiss
+    private let pauseDesc: [String] = [
+   "ゆっくり休んでしてね🎃🫰",
+   "大川先生のリナックス授業は面白いよー😻",
+   "今年の渋谷ハロウィンパーティーに閉会された🐱",
+   "水分を忘れないね 🫶"]
     
     var body: some View {
         ZStack() {
@@ -22,7 +27,8 @@ struct CustomAlert: View {
                     .padding()
                 
                 VStack {
-                    Text("ゆっくり休んでしてね 🎃🫰")
+                    let pauseNum = Int.random(in: 0..<pauseDesc.count)
+                    Text(pauseDesc[pauseNum])
                         .font(.custom("Kiwi Maru", size: 20))
                         .foregroundColor(.white)
                         
@@ -33,26 +39,11 @@ struct CustomAlert: View {
                             path.removeAll()
                         }) {
                             RoundedRectangle(cornerRadius: 15)
-                                .fill(Color("SecondaryColor"))
-                                .frame(width: 110, height: 60, alignment: .center)
+                                .fill(Color("FourthColor"))
+                                .frame(width: 180, height: 60, alignment: .center)
                                 .overlay(
-                                    Text("メニュ")
-                                        .font(.custom("Kiwi Maru", size: 18))
-                                        .fontWeight(.black)
-                                        .foregroundColor(.white)
-                                )
-                        }.padding()
-                        
-                        // 再開ボタン
-                        Button(action: {
-                            path.removeAll()
-                        }) {
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(Color("SecondaryColor"))
-                                .frame(width: 110, height: 60, alignment: .center)
-                                .overlay(
-                                    Text("再開")
-                                        .font(.custom("Kiwi Maru", size: 20))
+                                    Text("メニュに戻る")
+                                        .font(.custom("Kiwi Maru", size: 24))
                                         .fontWeight(.black)
                                         .foregroundColor(.white)
                                 )
@@ -73,7 +64,7 @@ struct CustomAlert: View {
                             .fill(Color("SecondaryColor"))
                             .frame(width: 200, height: 100, alignment: .center)
                             .overlay(
-                                Text("続ける")
+                                Text("再開")
                                     .font(.custom("Kiwi Maru", size: 36))
                                     .fontWeight(.black)
                                     .foregroundColor(.white)
