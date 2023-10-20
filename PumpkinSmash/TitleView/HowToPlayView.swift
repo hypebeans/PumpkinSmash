@@ -34,11 +34,14 @@ struct HowToPlayView: View {
     
     var body: some View {
 
+        ZStack {
+            // 背景色
+            Color("PrimaryColor")
+                .ignoresSafeArea()
+            
+            // ScrollView
             ScrollView {
                 ZStack {
-                    Color("PrimaryColor")
-                        .ignoresSafeArea()
-                    
                     VStack {
                         Spacer()
                         Text("")
@@ -341,17 +344,8 @@ struct HowToPlayView: View {
                     }
                 }
             }
-//            .navigationViewStyle(StackNavigationViewStyle())
-            .ignoresSafeArea()
-//            .presentationDetents([
-//                .large
-//              ])
-//            .presentationBackgroundInteraction(.enabled(upThrough: .height(.infinity)))
-
-            
-            
-
-
+        }
+        .ignoresSafeArea()
     }
 }
 

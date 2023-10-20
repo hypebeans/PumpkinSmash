@@ -27,7 +27,7 @@ struct CustomAlert: View {
                         .foregroundColor(.white)
                         
                     Spacer()
-                    // メニューに戻るボタン
+                    // タイトルに戻るボタン
                     HStack(spacing: 0) {
                         Button(action: {
                             path.removeAll()
@@ -42,6 +42,8 @@ struct CustomAlert: View {
                                         .foregroundColor(.white)
                                 )
                         }.padding()
+                        
+                        // 再開ボタン
                         Button(action: {
                             path.removeAll()
                         }) {
