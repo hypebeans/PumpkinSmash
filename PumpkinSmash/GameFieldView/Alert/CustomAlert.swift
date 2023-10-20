@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CustomAlert: View {
+    // pathを使用してメニューに戻すことができる
+    
     var body: some View {
         ZStack() {
             VStack(spacing: 0) {
