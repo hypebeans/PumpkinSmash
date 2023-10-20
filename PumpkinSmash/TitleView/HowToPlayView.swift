@@ -129,14 +129,16 @@ struct HowToPlayView: View {
                             Image("normalTitle")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .scaleEffect(0.85)
-                                .offset(x: -5)
+                                .scaleEffect(0.9)
+                                .offset(x: -25)
                                 .frame(maxWidth: .infinity)
                             Text(mediumDesc)
                                 .font(.custom("Kiwi Maru", size: 12))
                                 .fontWeight(.bold)
+                                .padding(.leading, -5)
                         }
                         .padding()
+                        
                         Spacer()
                         HStack(spacing: 0) {
                             Image("hardTitle")

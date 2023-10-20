@@ -22,7 +22,14 @@ struct ScoreResultsView: View {
                 Text("ゲーム終了")
                     .font(.custom("Kiwi Maru", size: 60))
                     .fontWeight(.black)
+                    .foregroundColor(Color.white)
+                    .overlay(
+                Text("ゲーム終了")
+                    .font(.custom("Kiwi Maru", size: 60))
+                    .fontWeight(.black)
                     .foregroundColor(Color("FourthColor"))
+                    .offset(x: 2, y: 4)
+                )
                 
                 Spacer()
                 Text("あなたのスコア結果")
