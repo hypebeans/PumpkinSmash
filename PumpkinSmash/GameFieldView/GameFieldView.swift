@@ -18,8 +18,8 @@ struct GameFieldView: View {
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
     // 難易度を選択。
-//    @EnvironmentObject var difficulty: Difficulty
-    @ObservedObject var difficulty = Difficulty()
+    @EnvironmentObject var difficulty: Difficulty
+//    @ObservedObject var difficulty = Difficulty()
     // 制限時間を保持しておく変数
     @State var setTime: Int = 0
     // ランダムにかぼちゃの画像を選ぶ
@@ -55,7 +55,7 @@ struct GameFieldView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .scaleEffect(1.2)
-                .offset(x: -25, y: -60)
+                .offset(x: -35, y: 20)
                 .opacity(0.8)
                 .ignoresSafeArea()
             
@@ -208,7 +208,7 @@ struct GameFieldView: View {
                 pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
             case 2:
                 print("difficulty is 'Hard'")
-                setTime = 5
+                setTime = 7
                 showHole = Array(0...24)
                 pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin", "Bomb_Pumpkin", "OverworkCat_Pumpkin"]
             default:

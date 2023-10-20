@@ -77,7 +77,7 @@ struct ScoreResultsView: View {
                             .fill(Color("SecondaryColor"))
                             .frame(width: 150, height: 60, alignment: .center)
                             .overlay(
-                                Text("ゲームやり直す") //TODO: ボタンの画像を作成
+                                Text("もう1度プレイ") //TODO: ボタンの画像を作成
                                     .font(.custom("Kiwi Maru", size: 16))
                                     .fontWeight(.black)
                                     .foregroundColor(.white)

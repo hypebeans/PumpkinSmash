@@ -13,8 +13,8 @@ struct CustomAlert: View {
     @Environment(\.dismiss) private var dismiss
     private let pauseDesc: [String] = [
    "ゆっくり休んでしてね🎃🫰",
-   "大川先生のリナックス授業は面白いよー😻",
-   "今年の渋谷ハロウィンパーティーに閉会された🐱",
+   "大川先生の授業は面白いよー😻",
+   "猫は可愛いですよ🐱🫰",
    "水分を忘れないね 🫶"]
     
     var body: some View {
@@ -33,6 +33,7 @@ struct CustomAlert: View {
                         .foregroundColor(.white)
                         
                     Spacer()
+                    
                     // タイトルに戻るボタン
                     HStack(spacing: 0) {
                         Button(action: {
@@ -42,7 +43,7 @@ struct CustomAlert: View {
                                 .fill(Color("FourthColor"))
                                 .frame(width: 180, height: 60, alignment: .center)
                                 .overlay(
-                                    Text("メニュに戻る")
+                                    Text("タイトルに戻る")
                                         .font(.custom("Kiwi Maru", size: 24))
                                         .fontWeight(.black)
                                         .foregroundColor(.white)
@@ -64,7 +65,7 @@ struct CustomAlert: View {
                             .fill(Color("SecondaryColor"))
                             .frame(width: 200, height: 100, alignment: .center)
                             .overlay(
-                                Text("再開")
+                                Text("やり直す")
                                     .font(.custom("Kiwi Maru", size: 36))
                                     .fontWeight(.black)
                                     .foregroundColor(.white)
