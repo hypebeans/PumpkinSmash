@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct CustomAlert: View {
-    // pathを使用してメニューに戻すことができる
+    
+    @Binding var path: [ViewPath]
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         ZStack() {
@@ -26,19 +28,34 @@ struct CustomAlert: View {
                         
                     Spacer()
                     // メニューに戻るボタン
-                    Button(action: {
-                        
-                    }) {
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color("SecondaryColor"))
-                            .frame(width: 150, height: 60, alignment: .center)
-                            .overlay(
-                                Text("メニューに戻る")
-                                    .font(.custom("Kiwi Maru", size: 16))
-                                    .fontWeight(.black)
-                                    .foregroundColor(.white)
-                            )
-                    }.padding()
+                    HStack(spacing: 0) {
+                        Button(action: {
+                            path.removeAll()
+                        }) {
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(Color("SecondaryColor"))
+                                .frame(width: 110, height: 60, alignment: .center)
+                                .overlay(
+                                    Text("メニュ")
+                                        .font(.custom("Kiwi Maru", size: 18))
+                                        .fontWeight(.black)
+                                        .foregroundColor(.white)
+                                )
+                        }.padding()
+                        Button(action: {
+                            path.removeAll()
+                        }) {
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(Color("SecondaryColor"))
+                                .frame(width: 110, height: 60, alignment: .center)
+                                .overlay(
+                                    Text("再開")
+                                        .font(.custom("Kiwi Maru", size: 20))
+                                        .fontWeight(.black)
+                                        .foregroundColor(.white)
+                                )
+                        }.padding()
+                    }
                     
                     Spacer()
                 }
@@ -48,13 +65,13 @@ struct CustomAlert: View {
                 .overlay {
                     // ゲームやり直すボタン
                     Button(action: {
-                        
+                        dismiss()
                     }) {
                         RoundedRectangle(cornerRadius: 15)
                             .fill(Color("SecondaryColor"))
                             .frame(width: 200, height: 100, alignment: .center)
                             .overlay(
-                                Text("再開")
+                                Text("続ける")
                                     .font(.custom("Kiwi Maru", size: 36))
                                     .fontWeight(.black)
                                     .foregroundColor(.white)
@@ -75,6 +92,8 @@ struct CustomAlert: View {
     }
 }
 
-#Preview {
-    CustomAlert()
+struct CustomAlert_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomAlert(path: .constant([.GameFieldView]))
+    }
 }
