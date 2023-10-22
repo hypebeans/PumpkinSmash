@@ -14,6 +14,7 @@ struct CustomAlert: View {
     private let pauseDesc: [String] = [
    "ゆっくり休んでしてね🎃🫰",
    "大川先生の授業は面白いよー😻",
+   "来年もよろしくね！🥺",
    "猫は可愛いですよ🐱🫰",
    "水分を忘れないね 🫶"]
     

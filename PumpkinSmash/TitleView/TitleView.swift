@@ -12,6 +12,8 @@ struct TitleView: View {
     @State var path: [ViewPath] = []
     @State var showPlay = false
     @Environment(\.dismiss) var dismiss
+    private let titleDesign: [String] = [
+   "Title Design", "Title Design 2"]
     // View間で難易度をやり取りするためのObservedObject
     @ObservedObject var difficulty = Difficulty()
     
@@ -73,10 +75,13 @@ struct TitleView: View {
                     
                     ZStack {
                         VStack {
-                            // TODO: 他の画像を追加こと
-                            Image("Ookawa_Pumpkin")
+                            let titleNum = Int.random(in: 0..<titleDesign.count)
+                            Image(titleDesign[titleNum])
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
+                                .scaleEffect(1.25)
+                                .padding(-20)
+                                .offset(y: -30)
                         }
                     }
                     
