@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct GameFieldView: View {
-    // path → 画面遷移を制御するフラグ
+    // path: 画面遷移を制御するフラグ
     @Binding var path: [ViewPath]
     // グリッドの設定
     let grids = Array(repeating: GridItem(.fixed(UIScreen.main.bounds.width / 5 - 10)), count: 5)
@@ -18,6 +18,7 @@ struct GameFieldView: View {
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
     // 難易度を選択。
+    // MARK:  プレビューの時はEnvironmentObjectにしてください!!! 簡単しか選ばれなくなります!!!
 //    @EnvironmentObject var difficulty: Difficulty
     @ObservedObject var difficulty = Difficulty()
     // 制限時間を保持しておく変数
@@ -202,9 +203,8 @@ struct GameFieldView: View {
                 // ゲームを初期状態に戻す
                 isGameStarted = false               // ゲーム開始フラグをリセット
                 buttonPosition = 0                  // ボタンの場所をリセット
-                countPumpkinPoints = 0                   // 得点をリセット
+                countPumpkinPoints = 0              // 得点をリセット
                 timerManager.secondsLeft = setTime  // 残り時間をリセット
-                print("onDismiss pumpkinPoints: \(countPumpkinPoints)")
             },
             content: {
                 ScoreResultsView(pumpkinPoints: self.countPumpkinPoints, path: $path)
@@ -217,17 +217,14 @@ struct GameFieldView: View {
         // 制限時間(setTime)、表示する穴の数(showHole)、画像の種類を変更する(pumpkinImage)
         switch difficulty.num {
         case 0:
-            print("difficulty is 'Easy'")
             setTime = 15
             showHole = [2, 6, 8, 10, 12, 14, 16, 18, 22]
             pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
         case 1:
-            print("difficulty is 'Normal'")
             setTime = 10
             showHole = [2, 6, 7, 8, 10, 11, 12, 13, 14, 16, 17, 18, 22]
             pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
         case 2:
-            print("difficulty is 'Hard'")
             setTime = 7
             showHole = Array(0...24)
             pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin", "Bomb_Pumpkin", "OverworkCat_Pumpkin"]
@@ -263,7 +260,7 @@ struct GameFieldView: View {
     }
 }
 
-// FIXME: (difficulty: 0, isPresented: .constant(true))はデバッグ用です。difficultyの数字を変更すると難易度が変化します
+// FIXME: (path: .constant([]))はデバッグ用です。'Difficulty.swift'の値を変更するとプレビューの難易度を変更できます
 struct GameFieldView_Previews: PreviewProvider {
     static var previews: some View {
         GameFieldView(path: .constant([]))

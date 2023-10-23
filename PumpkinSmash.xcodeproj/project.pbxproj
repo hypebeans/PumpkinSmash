@@ -87,7 +87,6 @@
 		1DB113D32AE0D137007A1691 /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				1DB25E102AE0B2AD00747606 /* ViewPath.swift */,
 				1DB113D12AE0C22E007A1691 /* Difficulty.swift */,
 			);
 			path = Items;
@@ -96,6 +95,7 @@
 		1DBC8C9A2AD8D11300E75C59 /* GameFieldView */ = {
 			isa = PBXGroup;
 			children = (
+				1DB113D32AE0D137007A1691 /* Items */,
 				6BD979652AE0D22600A37AA8 /* Alert */,
 				1DFA46A92ACEB0A700781FF4 /* GameFieldView.swift */,
 				6B79073D2AD7A97700AB8C49 /* ScoreResultsView.swift */,
@@ -151,7 +151,7 @@
 				1DB113D02AE0C0BA007A1691 /* TitleView */,
 				6B069CF72ACD647E0027B308 /* LevelSelectView.swift */,
 				1DBC8C9A2AD8D11300E75C59 /* GameFieldView */,
-				1DB113D32AE0D137007A1691 /* Items */,
+				1DB25E102AE0B2AD00747606 /* ViewPath.swift */,
 				6B069CEF2ACD604C0027B308 /* Preview Content */,
 			);
 			path = PumpkinSmash;
