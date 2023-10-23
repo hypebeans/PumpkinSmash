@@ -9,4 +9,8 @@ import Foundation
 
 class Difficulty: ObservableObject {
     @Published var num = 0
+    
+    func setDifficulty() {
+        
+    }
 }

@@ -18,8 +18,8 @@ struct GameFieldView: View {
     // タイマーを作成
     @StateObject var timerManager = TimerManager()
     // 難易度を選択。
-    @EnvironmentObject var difficulty: Difficulty
-//    @ObservedObject var difficulty = Difficulty()
+//    @EnvironmentObject var difficulty: Difficulty
+    @ObservedObject var difficulty = Difficulty()
     // 制限時間を保持しておく変数
     @State var setTime: Int = 0
     // ランダムにかぼちゃの画像を選ぶ
@@ -41,7 +41,7 @@ struct GameFieldView: View {
     // かぼちゃ画像のアニメーション
     @State var buttonAnimation: CGSize = CGSize(width: 0, height: 0)
     // かぼちゃの点数
-    @State var pumpkinPoints: Int = 0
+    @State var countPumpkinPoints: Int = 0
     // 連打した時に音が重ならないようにする
     func playSound() {
         tapSound.stop()
@@ -147,7 +147,7 @@ struct GameFieldView: View {
                     }
                     .disabled(isAlertShow ? true : false)
                     
-                    // TODO: ボタンデザインを変更しよう
+                    
                     if !isGameStarted {
                         Button(action: {
                             isGameStarted = true // ゲームを開始しているか
@@ -194,30 +194,7 @@ struct GameFieldView: View {
         }
         // GameFieldViewが呼び出された時に残り時間を設定する
         .onAppear() {
-            // 制限時間(setTime)、表示する穴の数(showHole)、画像の種類を変更する(pumpkinImage)
-            switch difficulty.num {
-            case 0:
-                print("difficulty is 'Easy'")
-                setTime = 15
-                showHole = [2, 6, 8, 10, 12, 14, 16, 18, 22]
-                pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
-            case 1:
-                print("difficulty is 'Normal'")
-                setTime = 10
-                showHole = [2, 6, 7, 8, 10, 11, 12, 13, 14, 16, 17, 18, 22]
-                pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
-            case 2:
-                print("difficulty is 'Hard'")
-                setTime = 7
-                showHole = Array(0...24)
-                pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin", "Bomb_Pumpkin", "OverworkCat_Pumpkin"]
-            default:
-                setTime = 1
-                showHole = []
-            }
-            // 残り時間を設定
-            timerManager.secondsLeft = setTime
-            
+            setDifficulty()
         }
         .fullScreenCover(
             isPresented: $timerManager.isTimerStopped,
@@ -225,37 +202,63 @@ struct GameFieldView: View {
                 // ゲームを初期状態に戻す
                 isGameStarted = false               // ゲーム開始フラグをリセット
                 buttonPosition = 0                  // ボタンの場所をリセット
-                pumpkinPoints = 0                   // 得点をリセット
+                countPumpkinPoints = 0                   // 得点をリセット
                 timerManager.secondsLeft = setTime  // 残り時間をリセット
-                print("onDismiss pumpkinPoints: \(pumpkinPoints)")
+                print("onDismiss pumpkinPoints: \(countPumpkinPoints)")
             },
             content: {
-                ScoreResultsView(pumpkinPoints: self.pumpkinPoints, path: $path)
+                ScoreResultsView(pumpkinPoints: self.countPumpkinPoints, path: $path)
                     .navigationBarBackButtonHidden()
             }
         )
+    }
+    // 難易度を設定する
+    func setDifficulty() {
+        // 制限時間(setTime)、表示する穴の数(showHole)、画像の種類を変更する(pumpkinImage)
+        switch difficulty.num {
+        case 0:
+            print("difficulty is 'Easy'")
+            setTime = 15
+            showHole = [2, 6, 8, 10, 12, 14, 16, 18, 22]
+            pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
+        case 1:
+            print("difficulty is 'Normal'")
+            setTime = 10
+            showHole = [2, 6, 7, 8, 10, 11, 12, 13, 14, 16, 17, 18, 22]
+            pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin"]
+        case 2:
+            print("difficulty is 'Hard'")
+            setTime = 7
+            showHole = Array(0...24)
+            pumpkinImages = ["Normal_Pumpkin", "Gold_Pumpkin", "Ookawa_Pumpkin", "Bomb_Pumpkin", "OverworkCat_Pumpkin"]
+        default:
+            setTime = 1
+            showHole = []
+        }
+        // 残り時間を設定
+        timerManager.secondsLeft = setTime
     }
     
     // 画像によって点数を振り分ける
     func dividePoint(imageName: String) {
         switch imageName {
         case "Normal_Pumpkin":
-            pumpkinPoints += 1
+            countPumpkinPoints += 1
             // print("Normal_Pumpkin. point: \(pumpkinPoints)")
         case "Gold_Pumpkin":
-            pumpkinPoints += 5
+            countPumpkinPoints += 5
             // print("Gold_Pumpkin. point: \(pumpkinPoints)")
         case "Ookawa_Pumpkin":
-            pumpkinPoints += 10
+            countPumpkinPoints += 10
             // print("Ookawa_Pumpkin. point: \(pumpkinPoints)")
         case "Bomb_Pumpkin":
-            pumpkinPoints -= 10
+            countPumpkinPoints -= 10
             // print("Bomb_Pumpkin. point: \(pumpkinPoints)")
         case "OverworkCat_Pumpkin":
-            pumpkinPoints -= 20
+            countPumpkinPoints -= 20
             // print("OverworkCat_Pumpkin. point: \(pumpkinPoints)")
         default:
-            pumpkinPoints = 0
+            countPumpkinPoints = 0
         }
     }
 }
