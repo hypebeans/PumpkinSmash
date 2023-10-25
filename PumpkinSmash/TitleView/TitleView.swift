@@ -15,7 +15,7 @@ struct TitleView: View {
     private let titleDesign: [String] = [
    "Title Design", "Title Design 2"]
     // View間で難易度をやり取りするためのObservedObject
-    @ObservedObject var difficulty = Difficulty()
+    @ObservedObject var levelSelector = LevelSelector()
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -94,7 +94,7 @@ struct TitleView: View {
                     case .LevelSelectView:
                         LevelSelectView(path: $path)
                             .navigationBarBackButtonHidden()
-                            .environmentObject(difficulty)
+                            .environmentObject(levelSelector)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarLeading) {
                                                 Button {
@@ -112,7 +112,7 @@ struct TitleView: View {
                     case .GameFieldView:
                         GameFieldView(path: $path)
                             .navigationBarBackButtonHidden()
-                            .environmentObject(difficulty)
+                            .environmentObject(levelSelector)
                         
                     }
                 }

@@ -10,8 +10,9 @@ import SwiftUI
 struct LevelSelectView: View {
     // 画面遷移を制御
     @Binding var path: [ViewPath]
-    // difficulty → 難易度   0: 簡単, 1: 普通 2: 難しい
-    @EnvironmentObject var difficulty: Difficulty
+    
+    // levelSelector → 難易度を決めるクラス
+    @EnvironmentObject var levelSelector: LevelSelector
     @Environment(\.presentationMode) var present
     
     var body: some View {
@@ -36,6 +37,7 @@ struct LevelSelectView: View {
                 // 簡単
                 Button(action: {
                     presented(num: 0)
+                    path.append(.GameFieldView)
                 }) {
                     RoundedRectangle(cornerRadius: 20)
                     // TODO: カスタム画像のボタン（今週も締め切り 🗿）
@@ -103,14 +105,9 @@ struct LevelSelectView: View {
     
     // 難易度を変数difficultyへ代入し画面遷移を行う関数
     func presented(num: Int) {
-        difficulty.num = num
+        levelSelector.num = num
         path.append(.GameFieldView)
     }
-    
-//    func goBack() {
-//        self.present.wrappedValue.dismiss()
-//    }
-    
 }
     
 struct LevelSelectView_Previews: PreviewProvider {

@@ -19,8 +19,8 @@ struct GameFieldView: View {
     @StateObject var timerManager = TimerManager()
     // 難易度を選択。
     // MARK:  プレビューの時はEnvironmentObjectにしてください!!! 簡単しか選ばれなくなります!!!
-//    @EnvironmentObject var difficulty: Difficulty
-    @ObservedObject var difficulty = Difficulty()
+    @EnvironmentObject var difficulty: LevelSelector
+//    @ObservedObject var difficulty = LevelSelector()
     // 制限時間を保持しておく変数
     @State var setTime: Int = 0
     // ランダムにかぼちゃの画像を選ぶ
@@ -212,6 +212,7 @@ struct GameFieldView: View {
             }
         )
     }
+    
     // 難易度を設定する
     func setDifficulty() {
         // 制限時間(setTime)、表示する穴の数(showHole)、画像の種類を変更する(pumpkinImage)
@@ -232,7 +233,6 @@ struct GameFieldView: View {
             setTime = 1
             showHole = []
         }
-        // 残り時間を設定
         timerManager.secondsLeft = setTime
     }
     
@@ -257,6 +257,7 @@ struct GameFieldView: View {
         default:
             countPumpkinPoints = 0
         }
+        
     }
 }
 
