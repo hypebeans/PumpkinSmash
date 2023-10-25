@@ -90,10 +90,6 @@ struct ScoreResultsView: View {
             }
             
         }
-        
-        
-        
-        
     }
 }
 
